@@ -1,0 +1,28 @@
+
+
+  class Rational{
+  private:
+    int numerator ;
+    int denominator ;
+
+public:
+    Rational(int num = 0, int den = 1) ;
+    Rational(int integer) ;
+    ~Rational() ;
+
+    Get_numerator() ;
+    Get_denominator();
+
+    void Show() ; 
+
+    void simplify() ;
+
+    int To_integer() ;
+
+    Rational add(Rational summand) ;
+
+    Rational multiply(Rational product) ;
+
+
+
+  } ;

@@ -1,0 +1,17 @@
+Con esta pequeña encuesta, el profesorado de la asignatura quiere conocer algunos datos 
+sobre el desarrollo de las prácticas de la asignatura. 
+Por ello, le pido que suba un fichero con nombre EncuestaF5.txt que contenga una única línea con la siguiente información:
+
+<DNI sin letra> <seguimiento> <horas> <tema más difícil> 
+
+en el campo <seguimiento> indique el nivel de seguimiento de la asignatura (letra):
+     A (lo sigo todo bien en general)  B (hay algunas cosas que se me escapan) C (no creo que me de tiempo a ponerme al día) D (estoy totalmente perdido)
+en <horas>, el número de horas dedicadas por semana a la asignatura: (número)
+En <contenido más difícil del tema>, lo que ha resultado de especial complejidad en la resolución de los ejercicios de la última entrega (sesion 8: (texto libre)
+
+Ejemplo:
+
+EncuestaF13.txt
+
+54202078 B 5 Ahora mismo me resulta complicado (aunque me parece interesante y quisiera entenderlo bien) el utilizar vectores de objetos o clases que contengan a otros objetos. 
+ 

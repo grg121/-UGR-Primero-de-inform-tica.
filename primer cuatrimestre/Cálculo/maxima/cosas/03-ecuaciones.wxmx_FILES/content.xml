@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--   Created by wxMaxima 15.04.0   -->
+<!--http://wxmaxima.sourceforge.net-->
+
+<wxMaximaDocument version="1.2" zoom="140">
+
+<cell type="title">
+<editor type="title">
+<line>Resolución de ecuaciones</line>
+</editor>
+
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Listas</line>
+</editor>
+<fold>
+<cell type="text">
+<editor type="text">
+<line>Los términos de una lista se separan con comas y se agrupan entre corchetes. Las listas</line>
+<line>pueden anidarse, esto es, pueden contener a su vez listas.</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>milista:[2,45,x^2-x,[-3,1],&quot;hola&quot;];</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>lista[i] devuelve el término i-ésimo de de la lista</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>milista[2];</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>milista[4][1];</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>length(lista) longitud de la lista</line>
+<line>sort(lista) devuelve la lista ordenada</line>
+<line>reverse(lista) devuelve la lista en orden inverso</line>
+<line>unique(lista) devuelve la lista sin elementos repetidos</line>
+<line></line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>sort([2,1,4,15]);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>reverse(%);</line>
+</editor>
+</input>
+</cell>
+</fold>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Ecuaciones</line>
+</editor>
+<fold>
+<cell type="text">
+<editor type="text">
+<line>Una ecuación tiene la forma expresion1 = expresion2</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq:x^2=1-3*x;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>lhs(eq) devuelve la parte a la izquierda del igual</line>
+<line>rhs(eq) devuelve la parte a la derecha del igual</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>lhs(eq);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>rhs(eq);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Se puede operar con ecuaciones</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq^2;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq-1;</line>
+</editor>
+</input>
+</cell>
+</fold>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Resolución de ecuaciones con solve</line>
+</editor>
+<fold>
+<cell type="text">
+<editor type="text">
+<line>solve(ecuacion,incognita)</line>
+<line>solve(lista de ecuaciones, lista de incognitas)</line>
+<line>devuelve una lista con las soluciones (que encuentre)</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(eq);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(x^3-x-3=0,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve([x+y=1,x-y=3],[x,y]);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>No siempre encuentra todas las soluciones</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(sin(x)*cos(x)=0,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Hay veces que no encuentra ninguna</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(x^6+x+1=0,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Hay veces que hay que ayudar (por ejemplo cuando hay raíces)</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq1:x+1=sqrt(x+2);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(eq1,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(eq1^2,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>No discute valores de parámetros (por ejemplo si a es distinto de cero o no)</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve(a*x^2+b*x+c=0,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="subsection">
+<editor type="subsection">
+<line>¿Cómo hacer referencia a las soluciones?</line>
+</editor>
+<fold>
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq1;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solucion:solve(eq1^2,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solucion[1];</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>map(funcion, lista) aplica la función a cada uno de los elementos de la lista</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>map(rhs,solucion);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Mejor aún</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solucion:map(rhs,solve(eq1^2,x));</line>
+</editor>
+</input>
+</cell>
+</fold>
+</cell>
+
+<cell type="subsection">
+<editor type="subsection">
+<line>Sistemas de ecuaciones</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve([x+y+z=1,x-y+z=2],[x,y,z]);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>%r1, %r2,... indica un número real arbitrario</line>
+<line>%z1, %z2,... indica un número entero arbitrario</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Si no hay solución</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve([x+y=2,x+y=-1],[x,y]);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>O todos los puntos cumplen la ecuación</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>solve((x+1)^2=x^2+2*x+1,x);</line>
+</editor>
+</input>
+</cell>
+</fold>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>to_poly_solve</line>
+</editor>
+<fold>
+<cell type="text">
+<editor type="text">
+<line>Funciona como solve, en algunos casos mejor y en otros no. La respuesta es</line>
+<line>un conjunto, no una lista</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>eq1;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>to_poly_solve(eq1,x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>to_poly_solve(sin(x)*cos(x)=0,x);</line>
+</editor>
+</input>
+</cell>
+</fold>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Resolución numérica de ecuaciones</line>
+</editor>
+
+</cell>
+
+<cell type="subsection">
+<editor type="subsection">
+<line>Raíces de polinomios</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Para encontrar las raíces de un polinomio tenemos varias opciones</line>
+<line></line>
+<line>allroots(polinomio) todas las raíces de un polinomio</line>
+<line></line>
+<line>bfallroots(polinomio) todas las raíces de un polinomio con reales grandes</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>allroots(x^4+x+1);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>fpprec:20;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>bfallroots(x^4+x+1);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>La orden realroots(polinomio) nos da únicamente las solucines reales</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>realroots(x^5-2*x+1);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>La cota del error cometido es, por defecto, 1.0*10^(-7). Dicho valor está</line>
+<line>controlado por el valor de la variable rootsepsilon.</line>
+<line></line>
+<line>Se puede pasar como opción una cota del error distinta a la orden realroots</line>
+<line></line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>realroots(x^5-2*x+1,10^(-3)),numer;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>realroots(x^5-2*x+1,10^(-10)),numer;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>La orden realroots guarda las multiplicidades de las raíces en la variable</line>
+<line>multiplicities</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>multiplicities;</line>
+</editor>
+</input>
+</cell>
+
+<cell type="subsection">
+<editor type="subsection">
+<line>find_root</line>
+<line></line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>find_root(funcion,x,a,b)</line>
+<line>find_root(ecuacion,x,a,b)</line>
+<line>bf_find_root(funcion,x,a,b)</line>
+<line>bf_find_root(ecuacion,x,a,b)</line>
+<line></line>
+<line>todas estas órdenes encuentran una solucion entre a y b de la función o de la ecuación. Con </line>
+<line>el prefijo bf_ se obtiene el mismo resultado, pero con números reales grandes.</line>
+<line></line>
+<line>Cuando hay más de una solución, no se tiene control sobre cuál de ellas será el resultado</line>
+<line>que se obtenga.</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>define(f(x),exp(-x^2)+atan(x+1)-x);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>wxplot2d([f(x)],[x,-3,3]);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>find_root(f(x),x,0,3);</line>
+</editor>
+</input>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>bf_find_root(f(x),x,0,3);</line>
+</editor>
+</input>
+</cell>
+
+</wxMaximaDocument>

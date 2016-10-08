@@ -1,0 +1,2 @@
+[GRAFOS]: Demuestra que en un grupo de 6 personas hay necesariamente tres que se conocen mutuamente o tres que no se conocen.
+Suponiendo que si A conoce a B, entonces B conoce a A. Demuestra que esto no es necesario en un grupo de 5 personas. 

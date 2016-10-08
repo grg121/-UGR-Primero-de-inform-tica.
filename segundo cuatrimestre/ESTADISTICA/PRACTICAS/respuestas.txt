@@ -1,0 +1,139 @@
+T	Edad	Altura	Peso	Grupo	Sexo	Acceso	I_1opcion	n_herm	n_miem	n_veh	Est_Est	Red	Plataf
+2/11/2015 12:44:20	20	178	82	E	Varón	Bachillerato o similar	Sí	2	5	2	No	Facebook	Swad
+2/22/2015 12:26:42	18	168	87	A	Varón	Bachillerato o similar	Sí	2	2	1	Sí	Otra	Swad
+2/22/2015 12:30:48	19	194	94	B	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Twitter	Swad
+2/22/2015 12:46:10	19	159	62	A	Mujer	Bachillerato o similar	Sí	1	3	2	No	Twitter	Swad
+2/22/2015 13:19:58	21	177	78	B	Varón	Ciclo Formativo Grado Superior	No	3	5	2	No	Twitter	Swad
+2/22/2015 13:20:00	18	180	53	A	Varón	Bachillerato o similar	Sí	2	4	3	No	Otra	Swad
+2/22/2015 13:50:29	20	180	62	A	Varón	Ciclo Formativo Grado Superior	Sí	6	4	3	No	Otra	Swad
+2/22/2015 13:51:16	18	168	68	A	Varón	Bachillerato o similar	Sí	3	3	1	No	Twitter	Swad
+2/22/2015 13:58:51	19	190	82	B	Varón	Bachillerato o similar	Sí	3	5	1	No	Facebook	Swad
+2/22/2015 14:09:28	18	187	79	B	Mujer	Bachillerato o similar	Sí	2	4	2	No	Otra	Swad
+2/22/2015 14:15:24	24	181	100	A	Varón	Ciclo Formativo Grado Superior	Sí	2	3	2	Sí	Facebook	Swad
+2/22/2015 14:47:36	18	163	56	A	Mujer	Bachillerato o similar	Sí	3	5	2	Sí	Facebook	Swad
+2/22/2015 15:13:38	21	200	90	D	Varón	Bachillerato o similar	Sí	2	3	1	Sí	Facebook	Swad
+2/22/2015 15:20:41	22	180	79	B	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	No	Facebook	Swad
+2/22/2015 16:07:27	18	185	70	B	Varón	Bachillerato o similar	Sí	2	4	2	No	Facebook	Swad
+2/22/2015 16:15:47	18	173	60	B	Varón	Bachillerato o similar	Sí	2	4	2	No	Otra	Moodle
+2/22/2015 17:17:42	18	172	68	A	Varón	Bachillerato o similar	Sí	2	3	1	No	Facebook	Swad
+2/22/2015 17:25:36	19	170	67	B	Varón	Bachillerato o similar	Sí	3	5	2	Sí	Facebook	Swad
+2/22/2015 17:38:18	19	185	70	B	Varón	Bachillerato o similar	Sí	3	5	2	No	Otra	Swad
+2/22/2015 17:38:45	24	180	74	A	Varón	Bachillerato o similar	Sí	2	4	4	No	Twitter	Swad
+2/22/2015 18:09:34	18	193	94	A	Varón	Bachillerato o similar	Sí	1	4	1	No	Twitter	Swad
+2/22/2015 18:11:45	24	189	75	B	Varón	Bachillerato o similar	Sí	1	2	0	No	Twitter	Swad
+2/22/2015 18:45:49	18	170	68	A	Varón	Bachillerato o similar	Sí	2	4	2	No	Twitter	Swad
+2/22/2015 19:06:23	18	172	70	A	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/22/2015 19:24:03	18	174	58	A	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Twitter	Swad
+2/22/2015 20:22:08	18	162	53	A	Mujer	Bachillerato o similar	Sí	2	4	2	No	Facebook	Swad
+2/22/2015 20:35:43	18	169	70	A	Varón	Bachillerato o similar	Sí	2	4	2	No	Twitter	Swad
+2/22/2015 20:56:58	18	160	53	A	Mujer	Bachillerato o similar	Sí	2	4	1	Sí	Facebook	Swad
+2/22/2015 21:10:39	22	179	110	A	Varón	Ciclo Formativo Grado Superior	Sí	3	5	2	No	Otra	Swad
+2/22/2015 21:20:14	32	182	90	B	Varón	Ciclo Formativo Grado Superior	Sí	5	2	1	No	Otra	Swad
+2/22/2015 22:00:10	21	180	87	B	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	No	Twitter	Moodle
+2/22/2015 22:35:30	18	172	72	A	Varón	Bachillerato o similar	Sí	2	4	2	No	Otra	Swad
+2/22/2015 22:49:27	18	178	70	B	Mujer	Bachillerato o similar	Sí	4	3	2	No	Twitter	Moodle
+2/22/2015 23:30:31	22	178	117	B	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	Sí	Twitter	Swad
+2/22/2015 23:53:12	18	174	80	B	Varón	Bachillerato o similar	Sí	2	4	2	No	Otra	Swad
+2/23/2015 0:00:56	19	182	95	B	Varón	Bachillerato o similar	Sí	2	4	3	No	Twitter	Swad
+2/23/2015 0:08:32	18	177	81	A	Varón	Bachillerato o similar	Sí	2	3	1	No	Twitter	Swad
+2/23/2015 0:44:07	26	165	60	B	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	No	Twitter	Moodle
+2/23/2015 7:16:04	18	183	76	B	Varón	Bachillerato o similar	Sí	2	5	3	Sí	Facebook	Swad
+2/23/2015 8:42:03	24	183	90	A	Varón	Bachillerato o similar	No	2	4	3	Sí	Facebook	Swad
+2/23/2015 8:59:25	26	182	70	B	Varón	Ciclo Formativo Grado Superior	Sí	3	5	3	No	Otra	Moodle
+2/23/2015 9:11:54	20	171	64	A	Varón	Bachillerato o similar	Sí	3	4	3	No	Facebook	Swad
+2/23/2015 10:23:36	23	173	75	B	Mujer	Bachillerato o similar	No	2	4	1	Sí	Facebook	Swad
+2/23/2015 11:24:57	18	178	72	A	Varón	Bachillerato o similar	Sí	3	5	2	No	Facebook	Swad
+2/23/2015 11:49:33	19	168	54	E	Mujer	Bachillerato o similar	Sí	2	4	3	No	Otra	Moodle
+2/23/2015 12:45:19	18	187	72	A	Varón	Bachillerato o similar	Sí	3	6	1	Sí	Facebook	Swad
+2/23/2015 13:32:49	19	168	65	B	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Facebook	Swad
+2/23/2015 13:38:39	19	170	64	B	Varón	Bachillerato o similar	Sí	1	3	4	Sí	Twitter	Swad
+2/23/2015 13:48:36	18	179	71	B	Varón	Bachillerato o similar	Sí	2	4	2	No	Twitter	Swad
+2/23/2015 15:05:26	18	180	68	A	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/23/2015 15:31:03	18	174	73	B	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/23/2015 15:32:09	21	184	88	A	Varón	Ciclo Formativo Grado Superior	Sí	1	3	4	No	Facebook	Swad
+2/23/2015 16:15:45	18	179	70	A	Varón	Bachillerato o similar	Sí	4	3	1	No	Otra	Swad
+2/23/2015 16:52:47	22	176	85	B	Varón	Ciclo Formativo Grado Superior	Sí	2	3	1	No	Otra	Swad
+2/23/2015 17:08:15	19	172	76	A	Varón	Bachillerato o similar	Sí	2	4	1	No	Otra	Swad
+2/23/2015 17:18:33	18	176	72	B	Mujer	Bachillerato o similar	No	2	4	2	No	Facebook	Swad
+2/23/2015 17:56:36	21	176	74	B	Varón	Ciclo Formativo Grado Superior	Sí	2	4	5	No	Otra	Swad
+2/23/2015 19:15:23	18	175	72	A	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/23/2015 19:37:46	21	168	65	A	Varón	Bachillerato o similar	No	3	5	1	Sí	Twitter	Swad
+2/23/2015 20:32:57	18	173	60	B	Varón	Bachillerato o similar	Sí	2	4	1	No	Facebook	Swad
+2/24/2015 9:53:46	19	188	75	A	Varón	Bachillerato o similar	No	3	5	3	Sí	Otra	Swad
+2/24/2015 10:40:21	19	175	85	C	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Twitter	Swad
+2/24/2015 10:40:24	19	185	64	C	Varón	Bachillerato o similar	Sí	2	4	1	No	Otra	Swad
+2/24/2015 10:40:25	18	185	87	C	Varón	Bachillerato o similar	Sí	2	4	2	No	Twitter	Swad
+2/24/2015 10:40:32	19	182	82	C	Varón	Bachillerato o similar	No	1	3	1	Sí	Twitter	Swad
+2/24/2015 10:40:34	18	165	51	C	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Twitter	Swad
+2/24/2015 10:40:41	21	195	90	C	Varón	Ciclo Formativo Grado Superior	Sí	3	2	3	Sí	Facebook	Swad
+2/24/2015 10:40:43	25	179	73	C	Varón	Bachillerato o similar	Sí	2	4	3	Sí	Twitter	Swad
+2/24/2015 10:40:46	19	196	83	C	Varón	Bachillerato o similar	Sí	1	4	0	No	Twitter	Swad
+2/24/2015 10:40:48	22	181	78	C	Varón	Bachillerato o similar	No	1	2	0	No	Facebook	Swad
+2/24/2015 10:40:55	19	171	74	C	Mujer	Bachillerato o similar	Sí	1	3	2	No	Facebook	Swad
+2/24/2015 10:40:55	28	173	61	C	Varón	Bachillerato o similar	Sí	1	3	1	Sí	Facebook	Swad
+2/24/2015 10:41:09	19	170	65	C	Varón	Bachillerato o similar	Sí	1	3	2	No	Twitter	Swad
+2/24/2015 10:41:15	18	191	75	C	Varón	Bachillerato o similar	Sí	3	5	6	No	Otra	Swad
+2/24/2015 10:41:16	18	167	67	C	Varón	Bachillerato o similar	Sí	3	5	3	No	Facebook	Swad
+2/24/2015 10:43:13	19	180	78	C	Varón	Bachillerato o similar	Sí	2	4	2	No	Twitter	Swad
+2/24/2015 12:33:03	18	180	65	E	Varón	Bachillerato o similar	Sí	2	4	1	No	Tuenti	Swad
+2/24/2015 12:35:30	19	183	71	B	Varón	Bachillerato o similar	No	1	3	6	Sí	Twitter	Swad
+2/24/2015 14:55:58	19	175	67	B	Mujer	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/24/2015 17:01:19	23	165	60	F	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/24/2015 17:01:33	24	175	85	F	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Otra	Swad
+2/24/2015 17:01:44	26	182	72	F	Varón	Ciclo Formativo Grado Superior	Sí	1	3	1	Sí	Otra	Swad
+2/24/2015 17:01:51	22	168	70	F	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	Sí	Twitter	Swad
+2/24/2015 17:01:53	18	180	70	F	Varón	Bachillerato o similar	Sí	2	4	2	No	Otra	Swad
+2/24/2015 17:02:00	19	177	74	F	Varón	Bachillerato o similar	Sí	2	4	2	Sí	Facebook	Swad
+2/24/2015 17:02:04	20	180	73	F	Varón	Ciclo Formativo Grado Superior	Sí	1	3	1	No	Facebook	Swad
+2/24/2015 17:02:06	22	185	87	F	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	Sí	Facebook	Swad
+2/24/2015 17:02:12	24	172	72	F	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	Sí	Facebook	Swad
+2/24/2015 17:02:16	20	180	82	F	Varón	Bachillerato o similar	Sí	3	5	4	No	Facebook	Swad
+2/24/2015 17:02:26	23	167	60	F	Varón	Ciclo Formativo Grado Superior	Sí	2	2	1	No	Facebook	Swad
+2/24/2015 17:02:36	19	167	70	F	Varón	Bachillerato o similar	No	2	4	3	No	Otra	Swad
+2/24/2015 17:02:46	24	170	70	F	Varón	Ciclo Formativo Grado Superior	Sí	2	4	2	Sí	Facebook	Swad
+2/24/2015 17:02:52	23	182	87	F	Varón	Bachillerato o similar	Sí	3	1	1	Sí	Facebook	Swad
+2/24/2015 20:34:52	51	180	83	A	Varón	Titulación Universitaria Previa	No	2	4	3	No	Twitter	Moodle
+2/24/2015 21:55:53	18	162	57	B	Mujer	Bachillerato o similar	Sí	3	5	2	Sí	Twitter	Swad
+2/24/2015 22:06:09	23	182	120	A	Varón	Ciclo Formativo Grado Superior	Sí	1	2	2	No	Facebook	Swad
+2/24/2015 22:48:11	20	180	73	A	Varón	Bachillerato o similar	Sí	2	4	3	No	Facebook	Swad
+2/25/2015 0:23:20	19	167	80	A	Varón	Bachillerato o similar	Sí	2	5	3	No	Facebook	Swad
+2/25/2015 11:30:22	28	180	105	E	Varón	Titulación Universitaria Previa	No	2	4	2	Sí	Facebook	Swad
+2/25/2015 16:39:50	20	170	71	F	Varón	Bachillerato o similar	Sí	1	3	2	No	Otra	Swad
+2/25/2015 16:39:54	21	178	100	F	Varón	Bachillerato o similar	Sí	3	5	2	Sí	Twitter	Swad
+2/25/2015 16:40:13	19	175	52	F	Varón	Bachillerato o similar	Sí	2	4	3	No	Twitter	Swad
+2/25/2015 16:40:21	22	190	75	F	Varón	Ciclo Formativo Grado Superior	Sí	2	4	3	No	Facebook	Swad
+2/25/2015 16:40:23	18	173	53	F	Mujer	Bachillerato o similar	No	2	3	2	No	Facebook	Swad
+2/25/2015 16:40:40	26	180	85	F	Varón	Ciclo Formativo Grado Superior	Sí	1	1	5	No	Otra	Swad
+2/25/2015 16:40:47	29	181	82	F	Varón	Ciclo Formativo Grado Superior	Sí	6	8	2	Sí	Twitter	Swad
+2/25/2015 16:40:52	26	175	60	F	Mujer	Ciclo Formativo Grado Superior	No	3	7	2	Sí	Facebook	Swad
+2/25/2015 16:41:07	20	180	90	F	Varón	Bachillerato o similar	No	3	3	3	No	Otra	Swad
+2/25/2015 16:41:38	23	179	81	F	Varón	Ciclo Formativo Grado Superior	Sí	5	3	3	Sí	Facebook	Swad
+2/25/2015 16:41:50	19	189	74	F	Varón	Bachillerato o similar	No	2	4	2	No	Otra	Swad
+2/25/2015 16:42:08	18	185	72	F	Varón	Bachillerato o similar	No	2	4	3	No	Twitter	Swad
+2/25/2015 16:42:48	19	193	84	F	Varón	Bachillerato o similar	Sí	2	4	0	Sí	Twitter	Swad
+2/25/2015 16:49:15	18	171	75	B	Varón	Bachillerato o similar	No	3	5	3	Sí	Twitter	Swad
+2/25/2015 17:23:10	18	190	70	B	Varón	Bachillerato o similar	Sí	2	4	1	No	Twitter	Swad
+2/25/2015 17:44:06	24	177	75	E	Varón	Bachillerato o similar	Sí	2	4	3	No	Facebook	Swad
+2/25/2015 17:44:13	21	185	73	E	Varón	Ciclo Formativo Grado Superior	No	2	4	2	No	Facebook	Swad
+2/25/2015 17:44:22	22	175	85	E	Varón	Ciclo Formativo Grado Superior	No	1	3	1	No	Facebook	Swad
+2/25/2015 17:44:23	19	182	65	E	Varón	Bachillerato o similar	Sí	2	5	1	No	Twitter	Swad
+2/25/2015 17:44:25	20	178	83	E	Varón	Bachillerato o similar	Sí	4	5	2	No	Facebook	Swad
+2/25/2015 17:44:36	20	175	77	E	Varón	Bachillerato o similar	Sí	3	5	2	Sí	Otra	Swad
+2/25/2015 17:44:58	18	175	72	E	Varón	Bachillerato o similar	No	3	5	2	Sí	Otra	Swad
+2/25/2015 17:45:17	20	167	64	E	Varón	Bachillerato o similar	Sí	2	4	0	Sí	Twitter	Swad
+2/25/2015 17:45:38	19	183	71	E	Varón	Bachillerato o similar	No	1	1	2	No	Facebook	Swad
+2/25/2015 17:46:01	21	185	70	E	Varón	Bachillerato o similar	Sí	4	7	2	No	Facebook	Swad
+2/26/2015 0:05:43	20	184	90	B	Varón	Bachillerato o similar	Sí	2	3	1	Sí	Twitter	Swad
+2/26/2015 9:41:54	19	180	75	C	Varón	Bachillerato o similar	Sí	3	4	1	No	Otra	Swad
+2/26/2015 9:41:54	24	173	90	C	Varón	Ciclo Formativo Grado Superior	Sí	2	4	1	No	Facebook	Swad
+2/26/2015 9:41:55	20	178	85	C	Varón	Ciclo Formativo Grado Superior	Sí	3	5	4	Sí	Twitter	Swad
+2/26/2015 9:41:58	18	172	63	C	Mujer	Bachillerato o similar	Sí	2	4	1	Sí	Twitter	Swad
+2/26/2015 9:42:07	18	174	63	C	Varón	Bachillerato o similar	Sí	2	4	3	Sí	Twitter	Swad
+2/26/2015 9:42:12	18	173	68	C	Varón	Bachillerato o similar	Sí	3	3	2	No	Facebook	Swad
+2/26/2015 9:42:13	18	189	75	C	Varón	Bachillerato o similar	Sí	3	4	1	No	Twitter	Swad
+2/26/2015 9:42:19	22	168	54	C	Varón	Bachillerato o similar	Sí	2	4	1	Sí	Otra	Swad
+2/26/2015 9:42:23	19	162	63	C	Mujer	Bachillerato o similar	Sí	1	2	1	Sí	Otra	Swad
+2/26/2015 9:42:36	19	179	82	C	Varón	Bachillerato o similar	No	2	4	2	No	Twitter	Swad
+2/26/2015 9:43:17	18	187	75	C	Varón	Bachillerato o similar	Sí	1	3	1	No	Facebook	Swad
+2/26/2015 17:42:48	24	180	74	E	Varón	Ciclo Formativo Grado Superior	Sí	3	5	3	Sí	Facebook	Swad
+2/26/2015 17:43:20	19	173	55	E	Varón	Bachillerato o similar	Sí	9	6	1	Sí	Facebook	Swad

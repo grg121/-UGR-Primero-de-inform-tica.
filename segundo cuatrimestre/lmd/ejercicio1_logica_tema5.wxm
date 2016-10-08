@@ -1,0 +1,64 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv(not (P and not Q and R) implies (R implies (P implies Q)),true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P or Q) implies (P and Q),true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P or Q) implies (P and Q),false);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((Q or not R) implies (P implies P), true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P and Q) and not(not P implies Q),true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P and Q) and not(not P implies Q),false);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv(P eq (Q eq (P eq Q)), true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P implies (Q or R)) or (P implies (Q and R)),true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P implies (Q or R)) or (P implies (Q and R)),false);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv((P implies Q) implies ((Q implies R) implies (P implies R)), true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv(Not ((P implies Q) or (P implies (not Q))),true);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+logic_equiv(Not ((P implies Q) or (P implies (not Q))),false);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+1. Tautología.
+2. Contingente.
+3. Tautología.
+4. Contradicción.
+5. Tautología.
+6. Contingente.
+7. Tautología.
+8. Contingente.
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

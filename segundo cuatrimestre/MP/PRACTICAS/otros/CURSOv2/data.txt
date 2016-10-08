@@ -1,0 +1,20 @@
+primero f3
+2
+francisco
+navarro morales
+3
+calculo
+4
+fisica
+3
+matematicas rusas
+9
+luis
+sola ruiz
+3
+jumanji
+9
+calculo
+5
+alem
+4

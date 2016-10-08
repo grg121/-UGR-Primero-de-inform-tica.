@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--   Created by wxMaxima 12.08.0   -->
+<!--http://wxmaxima.sourceforge.net-->
+
+<wxMaximaDocument version="1.1" zoom="100">
+
+<cell type="title">
+<editor type="title">
+<line>Primeros pasos</line>
+</editor>
+
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Operaciones elementales</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Suma, producto, cociente, exponencial, raíz cuadrada</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>2+5;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o1) </lbl><n>7</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>3*(2+3/4);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o2) </lbl><f><r><n>33</n></r><r><n>4</n></r></f></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>12^10;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o3) </lbl><n>61917364224</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>sqrt(121);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o4) </lbl><n>11</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>sqrt(120);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o5) </lbl><n>2</n><h>*</h><q><n>30</n></q></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>; y $ indican el fin de orden o separan varias órdenes</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>31^2;sqrt(4001);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o6) </lbl><n>961</n></mth>
+<mth><lbl>(%o7) </lbl><q><n>4001</n></q></mth>
+</output>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Constantes</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Constantes predefinas</line>
+<line>i,π,e,razón áurea</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>%i;</line>
+<line>%pi;</line>
+<line>%e;</line>
+<line>%phi;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o8) </lbl><s>%i</s></mth>
+<mth><lbl>(%o9) </lbl><s>%pi</s></mth>
+<mth><lbl>(%o10) </lbl><s>%e</s></mth>
+<mth><lbl>(%o11) </lbl><g>%phi</g></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>(2+3*%i)/(4+3*%i);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o12) </lbl><f><r><n>3</n><h>*</h><s>%i</s><v>+</v><n>2</n></r><r><n>3</n><h>*</h><s>%i</s><v>+</v><n>4</n></r></f></mth>
+</output>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Historial</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>% la última respuesta</line>
+<line>%i3 la tercera entrada</line>
+<line>%o2 la segunda respuesta</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>%^2;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o13) </lbl><f><r><e><r><p><n>3</n><h>*</h><s>%i</s><v>+</v><n>2</n></p></r><r><n>2</n></r></e></r><r><e><r><p><n>3</n><h>*</h><s>%i</s><v>+</v><n>4</n></p></r><r><n>2</n></r></e></r></f></mth>
+</output>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Exacto vs aproximado</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>La variable numer o la entrada &quot;numérico&quot; del menu controla el comportamiento</line>
+<line>numer:true o false (modo numérico o exacto)</line>
+<line></line>
+<line>float(numero) expresión decimal de un número</line>
+<line>bfloat(número) número con precisión real &quot;grande&quot;</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>sqrt(2);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o14) </lbl><q><n>2</n></q></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>sqrt(2),numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o18) </lbl><n>1.414213562373095</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>float(sqrt(2)),numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o19) </lbl><n>1.414213562373095</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o20) </lbl><t>false</t></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>numer:true;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o21) </lbl><t>true</t></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>1/2+sqrt(3);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o22) </lbl><n>2.232050807568877</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>numer:false;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o23) </lbl><t>false</t></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>1/2+sqrt(3);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o24) </lbl><q><n>3</n></q><v>+</v><f><r><n>1</n></r><r><n>2</n></r></f></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>La variable fpprec controla con cuantos dígitos se trabaja</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>fpprec;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o25) </lbl><n>16</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>fpprec:5;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o26) </lbl><n>5</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>bfloat(sqrt(5));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o27) </lbl><n>2.2361b0</n></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Los números en coma flotante grandes usan la notación b0,b1,.. que representa &quot;por 10^(el número después de b)&quot;</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>bfloat(sqrt(1241));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o28) </lbl><n>3.5228b1</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>float(sqrt(1241));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o29) </lbl><n>35.22782990761707</n></mth>
+</output>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Funciones usuales</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>exp, sqrt, log, sin, cos, tan, asin, acos, atan, sinh, cosh, tanh, asinh, acosh, atanh</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Los logaritmos son neperianos, se pueden calcular logaritmos en cualquier base</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>log(%e^3);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o32) </lbl><n>3</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>log(%e);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o31) </lbl><n>1</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>log(10),numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o33) </lbl><n>2.302585092994046</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>log10(x):=log(x)/log(10);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o34) </lbl><fn><fnm>log10</fnm><p><v>x</v></p></fn><t>:=</t><f><r><fn><fnm>log</fnm><p><v>x</v></p></fn></r><r><fn><fnm>log</fnm><p><n>10</n></p></fn></r></f></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>log10(8),numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o36) </lbl><n>.9030899869919434</n></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Las funciones trigonométricas están en radianes</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>cos(90),numer;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o37) </lbl><v>-</v><n>.4480736161291701</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>cos(%pi/2);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o38) </lbl><n>0</n></mth>
+</output>
+</cell>
+
+<cell type="subsection">
+<editor type="subsection">
+<line>Más funciones</line>
+</editor>
+
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>factorial, parte entera, valor absoluto, números aleatorios, max, min</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>3!;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o39) </lbl><n>6</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>entier(4.5);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o40) </lbl><n>4</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>entier(-0.1);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o41) </lbl><v>-</v><n>1</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>abs(-5);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o42) </lbl><n>5</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>random(3);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o43) </lbl><n>2</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>random(3.01);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o44) </lbl><n>.3725244024141143</n></mth>
+</output>
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Variables, constantes, funciones</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>largo:3;ancho:4;largo*ancho;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o45) </lbl><n>3</n></mth>
+<mth><lbl>(%o46) </lbl><n>4</n></mth>
+<mth><lbl>(%o47) </lbl><n>12</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>f(x):=cos(x^2);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o48) </lbl><fn><fnm>f</fnm><p><v>x</v></p></fn><t>:=</t><fn><fnm>cos</fnm><p><e><r><v>x</v></r><r><n>2</n></r></e></p></fn></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>define(g(x),sin(x+2));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o50) </lbl><fn><fnm>g</fnm><p><v>x</v></p></fn><t>:=</t><fn><fnm>sin</fnm><p><v>x</v><v>+</v><n>2</n></p></fn></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>g(1*f(2));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o51) </lbl><fn><fnm>sin</fnm><p><fn><fnm>cos</fnm><p><n>4</n></p></fn><v>+</v><n>2</n></p></fn></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Mirar menu: variables, borrar,...</line>
+</editor>
+
+</cell>
+
+<cell type="section">
+<editor type="section">
+<line>Expresiones simbólicas</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>exp(log(x));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o52) </lbl><v>x</v></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>p:(x+3)^3;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o53) </lbl><e><r><p><v>x</v><v>+</v><n>3</n></p></r><r><n>3</n></r></e></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>q:(x+1)*(x-2);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o54) </lbl><p><v>x</v><v>-</v><n>2</n></p><h>*</h><p><v>x</v><v>+</v><n>1</n></p></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>p/q;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o55) </lbl><f><r><e><r><p><v>x</v><v>+</v><n>3</n></p></r><r><n>3</n></r></e></r><r><p><v>x</v><v>-</v><n>2</n></p><h>*</h><p><v>x</v><v>+</v><n>1</n></p></r></f></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>expand, factor, partfrac</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>expand(p);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o60) </lbl><e><r><v>x</v></r><r><n>3</n></r></e><v>+</v><n>9</n><h>*</h><e><r><v>x</v></r><r><n>2</n></r></e><v>+</v><n>27</n><h>*</h><v>x</v><v>+</v><n>27</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>expand(p/q);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o56) </lbl><f><r><e><r><v>x</v></r><r><n>3</n></r></e></r><r><e><r><v>x</v></r><r><n>2</n></r></e><v>-</v><v>x</v><v>-</v><n>2</n></r></f><v>+</v><f><r><n>9</n><h>*</h><e><r><v>x</v></r><r><n>2</n></r></e></r><r><e><r><v>x</v></r><r><n>2</n></r></e><v>-</v><v>x</v><v>-</v><n>2</n></r></f><v>+</v><f><r><n>27</n><h>*</h><v>x</v></r><r><e><r><v>x</v></r><r><n>2</n></r></e><v>-</v><v>x</v><v>-</v><n>2</n></r></f><v>+</v><f><r><n>27</n></r><r><e><r><v>x</v></r><r><n>2</n></r></e><v>-</v><v>x</v><v>-</v><n>2</n></r></f></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>p/q;</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o58) </lbl><f><r><e><r><p><v>x</v><v>+</v><n>3</n></p></r><r><n>3</n></r></e></r><r><p><v>x</v><v>-</v><n>2</n></p><h>*</h><p><v>x</v><v>+</v><n>1</n></p></r></f></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>partfrac(p/q,x);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o59) </lbl><v>-</v><f><r><n>8</n></r><r><n>3</n><h>*</h><p><v>x</v><v>+</v><n>1</n></p></r></f><v>+</v><v>x</v><v>+</v><f><r><n>125</n></r><r><n>3</n><h>*</h><p><v>x</v><v>-</v><n>2</n></p></r></f><v>+</v><n>10</n></mth>
+</output>
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>factor(x^2+3*x+2);</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o62) </lbl><p><v>x</v><v>+</v><n>1</n></p><h>*</h><p><v>x</v><v>+</v><n>2</n></p></mth>
+</output>
+</cell>
+
+<cell type="text">
+<editor type="text">
+<line>Versiones para funciones trigonométricas</line>
+</editor>
+
+</cell>
+
+<cell type="code">
+<input>
+<editor type="input">
+<line>trigexpand(cos(x+y));</line>
+</editor>
+</input>
+<output>
+<mth><lbl>(%o63) </lbl><fn><fnm>cos</fnm><p><v>x</v></p></fn><h>*</h><fn><fnm>cos</fnm><p><v>y</v></p></fn><v>-</v><fn><fnm>sin</fnm><p><v>x</v></p></fn><h>*</h><fn><fnm>sin</fnm><p><v>y</v></p></fn></mth>
+</output>
+</cell>
+
+</wxMaximaDocument>

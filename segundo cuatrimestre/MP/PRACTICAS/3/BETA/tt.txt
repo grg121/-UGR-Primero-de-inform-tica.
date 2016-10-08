@@ -1,0 +1,4 @@
+Introduce el conjunto de caracteres para realizar la conversion
+
+
+ Introduce el nombre del archivo para cargar

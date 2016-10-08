@@ -1,0 +1,23 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+numero de soluciones de f(x) ?? en el intervalo [-3,3]
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= ((%e)^x)/2 - 2*sin(x) - 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(f(x),x,-3,3));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+en la grafica se aprecia que la funcion se anula en 3 puntos. de todos modos comprobamos este resultado
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

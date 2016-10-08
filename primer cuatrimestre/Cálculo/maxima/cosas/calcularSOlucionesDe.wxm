@@ -1,0 +1,115 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: input   start ] */
+eq1: 8*sin(x)+1-(x^2/3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1(x):= 8*sin(x)+1-(x^2/3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(eq1,x,-20,20));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+como la funcion tiende menos infinito cuando x tiende a mas infinito o a menos infinito, podemos descartar que existan valores donde f(x) valga cero por encima de 
+-20 y 20.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid = true,
+    explicit(eq1,x,-10,10));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+en esta gráfica hemos localizado las cuatro soluciones que se podían apreciar en la anterior. A continuación separamos la función en intervalos que contengan una sola solucion
+de la ecuación y obtenemos dichas soluciones por separado.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(eq1,x,-6,-4),
+    color=red,
+    point_type=circle,
+    point_size=3,
+    points([-5.057862052458299],[0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(eq1, x, -6, -4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1(-5.057862052458299);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(eq1,x,-4,-1),
+    color=red,
+    point_type=circle,
+    point_size=3,
+    points([-3.554761798457272],[0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(eq1, x, -4, -1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1(-3.554761798457272);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(eq1,x,-3,2),
+    color=red,
+    point_type=circle,
+    point_size=3,
+    points([-0.12467507658304],[0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(eq1, x, -3, 2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1(-0.12467507658304);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    explicit(eq1,x,1,5),
+    color=red,
+    point_type=circle,
+    point_size=3,
+    points([2.911390148275935],[0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(eq1, x, 1, 5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1(2.911390148275935);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Es decir, que las soluciones a la ecuacion son:
+x = -5.057862052458299
+x = -3.554761798457272
+x = -0.12467507658304
+x = 2.911390148275935
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

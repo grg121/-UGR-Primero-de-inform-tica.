@@ -1,0 +1,114 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 0.8.4 ] */
+
+/* [wxMaxima: comment start ]
+ejercicio 4.4
+circunferencia de centro (0,0) y radio 2
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load(draw);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq:x^2+y^2=4;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    implicit(x^2+y^2=4,x,-2,2,y,-2,2),
+    rectangle([-sqrt(3*sqrt(7)+8)/2,-1/(2*sqrt(3*sqrt(7)+8))],[sqrt(3*sqrt(7)+8)/2,1/(2*sqrt(3*sqrt(7)+8))]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([eq,4*x*y=1],[x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 4.5 c)
+Puntos de corte circunferencia de centro (0,0) y radio 2 
+con la circunferencia de centro (-1,3) y radio 3
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble=" set size ratio 1",
+    transparent=true,
+    ellipse(0,0,2,2,0,360),
+    ellipse(-1,3,3,3,0,360)
+
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+circunferencia centrada en (x0,y0) y de radio R: 
+    (x-xo)^2 + (y-yo)^2 = R^2 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+c1:x^2+y^2=4;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c2: (x+1)^2 + (y-3)^2 = 9;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([c1,c2],[x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+resolvemos utilizando las ecuaciones que componen las circunferencias:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(c1,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(c2,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq: sqrt(4-x^2) = 3-sqrt(-x^2-2*x+8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve (eq,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+to_poly_solve(eq^2,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+4.2)
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    transparent=true,
+    implicit(eqq,x,-3,3,y,-5,5),
+    explicit(x,x,-5,5),
+    color=red,
+    point_size=3,
+    points([-15/sqrt(34),15/sqrt(34)], [-15/sqrt(34),15/(sqrt(2)*sqrt(17))]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+elipse centrada en x0 y0 y semiejes a y b : 
+  (x-x0)^2/(a^2) + (y-y0)/(b^2) = 1
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+eqq:x^2/9+y^2/25 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([eqq,y=x],[x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

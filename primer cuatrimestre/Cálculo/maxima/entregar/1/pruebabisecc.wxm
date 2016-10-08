@@ -1,0 +1,76 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: input   start ] */
+numer:true;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=x^6+x-5;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a:0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b:2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+signos:[f(a),f(b)];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+if f(a)*f(b)>0 then print("Error, signos iguales.", signos);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+if f(a) > 0 then(positivo:a, negativo:b) else (positivo:b, negativo:a);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+positivo;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+err:10^(-6);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+pr:10^(-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+log2(x):=log(x)/log(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+pasos:ceiling(log2((b-a)/err));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+for i:1 thru pasos do
+(
+c:(positivo+negativo)/2,
+print(c),
+if abs(f(c))<pr then(print("La solucion es exacta: "), return(c))
+    else if f(c)>0 then positivo:c else negativo:c,
+print(c)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+positivo:0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+negativo:2;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

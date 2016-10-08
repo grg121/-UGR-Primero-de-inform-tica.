@@ -1,0 +1,620 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+date{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Resolución del trabajo autónomo.
+\end_layout
+
+\begin_layout Author
+Por Francisco Navarro Morales 
+\end_layout
+
+\begin_layout Standard
+El objetivo de este trabajo es calcular la intensidad de corriente que circula
+ por cada una de las mallas del siguiente circuito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fuente de tensión es de 5V, y las resistencias de 
+\begin_inset Formula $5k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Además, la 
+\begin_inset Formula $n$
+\end_inset
+
+ de los diodos es 1 en ambos y sus 
+\begin_inset Formula $I_{s}$
+\end_inset
+
+valen 
+\begin_inset Formula $5\cdot10^{-9}mA$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para ello, lo primero que he hecho ha sido comprobar el funcionamiento de
+ los diodos; es decir, si conducen o no electricidad.
+ Para ello utilizamos un modelo que interpresa un diodo que conduce como
+ una fuente de tensión que asegure la caida de 0.6 voltios en el diodo y
+ un diodo que no conduce como un cable cortado.
+\end_layout
+
+\begin_layout Section*
+Si ambos diodos conducen:
+\end_layout
+
+\begin_layout Standard
+Sustituyendo los dos diodos por dos fuentes de tensión de 0.6V, nos queda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 0.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Supongamos dos intensidades, 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+en la malla de la izquierda y 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+en la malla de la derecha.
+ ambas con sentido horario.
+\end_layout
+
+\begin_layout Standard
+Utilizando las leyes de Kirchoff y teniendo en cuenta que las fuentes que
+ sustituyen a los diodos son de 0.6V, tenemos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $malla1:\,5-0.5=5I_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $malla2:\,\,\,1.2\,\,\,=5I_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay que tener en cuenta que:
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+conduzca, el sentido de 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+debe ser el que hemos supuesto, es decir, que 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+debe ser positivo.
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+conduzca, el sentido de 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+debe ser contrario al supuesto, es decir, que 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+debe ser negativo.
+\end_layout
+
+\begin_layout Standard
+como 
+\begin_inset Formula $I_{2}=\frac{1.2}{5}>0$
+\end_inset
+
+; este modelo es erroneo.
+ Sin embargo, como 
+\begin_inset Formula $I_{1}=\frac{5-0.5}{5}>0$
+\end_inset
+
+ podemos deducir que, si 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+conduce, 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+no puede conducir.
+\end_layout
+
+\begin_layout Section*
+Si no conduce ninguno.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este caso, no circuila ninguna corriente, por lo que no hay caida de
+ tensión en las resistencias y, por tanto, la tensión en los extremos superiores
+ de los diodos es la misma (5V, obtenidos por la fuente) y la tensión en
+ los extremos inferiores de los diodos, también (0 Voltios, tomados como
+ referencia).
+ 
+\end_layout
+
+\begin_layout Standard
+Por consiguiente, y teniendo en cuenta que:
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+NO conduzca, 
+\begin_inset Formula $V_{d1}$
+\end_inset
+
+debe ser menor que 0.6V
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+NO conduzca, 
+\begin_inset Formula $V_{d2}$
+\end_inset
+
+debe ser menor que 0.6V
+\end_layout
+
+\begin_layout Standard
+Podemos apreciar que, teniendo en cuenta el sentido en que conducen los
+ diodos, 
+\begin_inset Formula $V_{d1}=5V>0.6$
+\end_inset
+
+ y 
+\begin_inset Formula $V_{d2}=-5V<0.6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esto nos indica que el diodo 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+sì conduce, y el diodo 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+, no.
+ 
+\end_layout
+
+\begin_layout Standard
+Es decir, que con la información obtenida en estos dos modelos podemos asegurar
+ que lo que ocurre realmente es que 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+conduce y 
+\begin_inset Formula $D_{2},$
+\end_inset
+
+no.
+\end_layout
+
+\begin_layout Standard
+Lo comprobamos:
+\end_layout
+
+\begin_layout Part*
+\begin_inset Formula $D_{1}$
+\end_inset
+
+ON 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+OFF
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename 5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este caso existe una única corriete, I, en la malla de la izquierda,
+ a la que supondremos un sentido horario.
+\end_layout
+
+\begin_layout Standard
+Tenemos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $5-0.6=5I$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I=\frac{5-0.6}{5}=0.88mA$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+conduzca, I debe tener el sentido supuesto, es decir, ser positiva; lo cual
+ es cierto.
+\end_layout
+
+\begin_layout Standard
+-Para que 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+NO conduzca, la caida de tensión en 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+debe ser menor que 0.6.
+ Como en la resistencia R4 no cae tensión (porque no circula corriente),
+ el extremo superior de 
+\begin_inset Formula $D_{2}$
+\end_inset
+
+está a 0.6 voltios más que el inferior; sin embargo, como el sentido en que
+ conduce el diodo es de abajo a arriba, la caida de tensión es -0.6 < 0.6,
+ es decir, que esta condición también se cumple.
+\end_layout
+
+\begin_layout Standard
+Una vez sabemos que este es el modelo adecuado, podemos asegurar que no
+ circula corriente por la malla de la derecha y pasar a calcular corréctamente
+ la intensidad que circula por la izquierda.
+ Ya tenemos que su valor es 0.88mA, pero este es un valor aproximado, para
+ calcular la corriente que realmente circula por el diodo 
+\begin_inset Formula $D_{1}$
+\end_inset
+
+ y, por tanto, por toda la malla, hacemos uso del modelo matemático de Shockley,
+ que dice que la intensidad que circula por un diodo es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{d1}=I_{s1}(e^{\frac{qV}{nKT}}-1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde:
+\end_layout
+
+\begin_layout Standard
+I es la intensidad de la corriente que atraviesa el diodo y VD la diferencia
+ de tensión entre sus extremos.
+ 
+\end_layout
+
+\begin_layout Standard
+IS es la corriente de saturación (aproximadamente 10^{-12} A) 
+\end_layout
+
+\begin_layout Standard
+q es la carga del electrón, 
+\begin_inset Formula $1.6*10^{-19}C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+T es la temperatura absoluta de la unión; consideramos que estamos a temperatura
+ ambiente, aproximadamente 300K
+\end_layout
+
+\begin_layout Standard
+k es la constante de Boltzmann, 
+\begin_inset Formula $1.38*10^{-23}J/K$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+n es el coeficiente de emisión, dependiente del proceso de fabricación del
+ diodo y que suele adoptar valores entre 1 (para el germanio) y del orden
+ de 2 (para el silicio).
+ 
+\end_layout
+
+\begin_layout Standard
+V es la caida de tensión en el diodo.
+\end_layout
+
+\begin_layout Standard
+luego tenemos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I=5\cdot10^{-9}(e^{38.65V}-1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+es decir, que, despejando v, nos queda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+v=\frac{ln(\frac{I}{5*10^{-9}}-1)}{38.65}A
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Además, 5-V=5I, entonces 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{5-V}{5000}A
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+si hubiéramos igualado 
+\begin_inset Formula $5\cdot10^{-9}(e^{3.86*10^{-6}V}-1)=\frac{5-V}{5}$
+\end_inset
+
+, resultaría imposible despejar V, estaríamos ante lo que se conoce como
+ una ecuación trascendente, lo que quiere decir que solo se puede obtener
+ el valor de V con métodos numéricos.
+ En mi caso, he usado el programa matemático wxMáxima para intentar encontrar,
+ por tanteo, una solución al problema:
+\end_layout
+
+\begin_layout Standard
+La idea es ir dando valores a v y, con el resultado para I obtenido en la
+ ecuación 2, calcular el valor que obtiene v en la ecuación uno.
+ Si encontramos un valor de v que coincida con el valor final obtenido,
+ tendremos la intensidad que queríamos calcular.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hemos obtenido que la caida de tensión real en el diodo es de 
+\begin_inset Formula $0.314115V$
+\end_inset
+
+, y no 0.6 como se había supuesto en un principio.
+ 
+\end_layout
+
+\begin_layout Standard
+Con ese valor se obtiene una intensidad de malla de 
+\begin_inset Formula $9.37177*10^{-4}A=.0937177mA$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y no los 
+\begin_inset Formula $0.88mA$
+\end_inset
+
+ que habíamos obtenido con el modelo simplificado.
+\end_layout
+
+\begin_layout Standard
+En conclusión, la intensidad de la corriente que circula por la malla de
+ la izquierda es de 
+\begin_inset Formula $.0937177mA$
+\end_inset
+
+ y no circula corriente por la otra malla.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

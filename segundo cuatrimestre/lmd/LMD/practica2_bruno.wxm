@@ -1,0 +1,92 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+load("D:/LMD/P01/LMD-Práctica-01/logic_ops.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("D:/LMD/P01/LMD-Práctica-01/logic.mac")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load("D:/LMD/P01/LMD-Práctica-01/boolmin.lisp")$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+boolean_table()
+boolean_minimize()
+
+x + (x*y) = x (absorcion)
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+boolean_minimize(x or (x and y));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+f(x,y,z,t) = sumatorio(m(0,1,3,4,7))
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+m(k):=(boolean_minterms(k,Var));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+M(k):=(boolean_simp(not(m(k))));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+forma normal disyuntiva
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+fnd(L):=apply("or",map(m,L));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+forma normal conjuntiva
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+fnc(L):=apply("and",map(M,L));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+Var:[x,y,z,t]; m(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fnd([0,1,3,4,7]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+e:fnd([0,1,3,4,7]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+boolean_minimize(e);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+f(a4,a3,a2,a1,a0) = 1 si es primo a4a3a2a1a0 en base 2.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+Var:[a4,a3,a2,a1,a0];
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fnd([2,3,5,7,11,13,17,19,23,29,31]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+primos:fnd([2,3,5,7,11,13,17,19,23,29,31]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+boolean_minimize(primos);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

@@ -1,0 +1,6 @@
+frasecica de prueba
+espacio
+numericos 1 2 3 4
+10 10 10 10
+penelope
+1:1:2:3:32:2:1

@@ -1,0 +1,163 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Dibuja la elipse centrada en (-1,2) de semiejes 2y3 y los rectángulos de área sqrt(15) inscritos en ella.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+load(draw)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=red,
+    transparent=true,
+    ellipse(-1,2,3,2,0,360),
+    points([-1],[2])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+esta es la elipse que nos piden. Un ejemplo de rectángulo inscrito en ella se podría obtener mediante...
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse: ((x+1)^2)/9 + ((y-2)^2)/4 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(elipse,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(x):=(2*sqrt(-x^2-2*x+8)+6)/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bot(x):=-(2*sqrt(-x^2-2*x+8)-6)/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(0.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bot(-2.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+hemos todamos dos valores de x (0 y -2) que distan una unidad del centro y tomado el valor que toma la elipse en esos puntos. El que está a la derecha se ha tomado con la parte
+superior de la elipse, y el de la izquierda, con la inferior. Así obtenemos esquinas superior derecha e inferior izquierda.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=red,
+    transparent=true,
+    ellipse(-1,2,3,2,0,360),
+    points([-1],[2]),
+    color=blue,
+    rectangle([0,3.885618083164126],
+              [-2,0.11438191683587])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Desplazando esta gráfica al centro de coordenadas:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    color=red,
+    transparent=true,
+    ellipse(0,0,3,2,0,360),
+    points([0],[0]),
+    color=blue,
+    rectangle(
+              [1,1.885618083164126],
+              [-1,0.11438191683587-2])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+siendo las coordenadas del vertice superior (x,y) y del inferior (-x,-y).
+El área del rectángulo queda A = 2*x*2*y = 4*x*y
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+area: 4*x*y = sqrt(15);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse: x^2/9 + y^2/4 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([area, elipse], [x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Los resultados obtenidos son los vértices de los distintos rectángulos que se pueden sacar.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    color=black,
+    transparent=true,
+    ellipse(0,0,3,2,0,360),
+    points([0],[0]),
+    color=blue,
+    point_type=filled_circle,
+    points([
+        [-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],
+        [(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]]),
+    
+    color=red,
+    points([
+        [-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2),(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],
+        [(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2), -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Con estos puntos, dibujamos el rectángulo:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    color=black,
+    transparent=true,
+    ellipse(0,0,3,2,0,360),
+    points([0],[0]),
+    color=blue,
+    rectangle([-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],
+                [(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]),
+    rectangle([-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2),(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],
+                [(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2), -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ahora, para dibujar la elipse y los rectángulos que nos piden, solo tenemos que transladar todos los puntos una unidad a la izquierda y dos hacia arriba:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    color=black,
+    transparent=true,
+    ellipse(-1,2,3,2,0,360),
+    color=red,
+    points([-1],[2]),
+    color=blue,
+    transparent=true,
+    rectangle([-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2)  -1, 2 + (sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],
+                [(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2) -1, 2 + (-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]),
+    rectangle([-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2)  -1, 2 +(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],
+                [(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2) -1, 2 -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

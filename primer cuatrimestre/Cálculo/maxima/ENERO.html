@@ -1,0 +1,1450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>ENERO</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+PRIMER EJERCICIO
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Calcula el plinomio de Taylor de la función logaritmo centrada en 1 de orden 3. Calcula sus extremos relativos.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i28) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+load(interpol);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_0.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+este es el polonimo de taylor de logaritmo de x centrado en 1 de orden 3:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i29) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+taylor(log(x),x,1,3);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_1.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i30) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+ptl(x):=x-1-(x-1)^2/2+(x-1)^3/3;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_2.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i31) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(log(x),x,0,100));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_3.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Sabemos que la función logaritmo es estrictamente creciente y su límite cuando x tiende a infinito es infinito. Como no está definida en x<0, también podemos afirmar que, cuando x tiende<BR>
+a 0, el logaritmo tiende a menos infinito. Por definición podríamos determinar que NO existen extremos relativos. Ahora bién, como estamos trabajando con el polinomio de Taylor de orden 3<BR>
+y centrado en 1, vamos a comprobar que esto se cumpla también para dicho polinomio.<BR>
+<BR>
+Hay que tener en cuenta que el polinomio de taylor de logaritmo de x SI está definido en los números negativos. Además tiene esta pinta:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i32) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(x-1+-(x-1)^2/2+(x-1)^3/3,x,-100,100));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_4.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+A simple vista, podríamos decir que, o bien existen variaciones en la monotonía o, al menos, existe un punto de inflexión...<BR>
+calculamos la derivada del polinomio.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i33) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+diff(ptl(x),x,1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_5.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+y buscamos raices reales.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i34) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve([x^2-3*x+3], [x]);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_6.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Efectivamente, no existen raices reales...
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i35) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+diff(-x+(x-1)^2+2,x,1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_7.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i36) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve([2*(x-1)-1],[x]);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_8.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Sí que existe un punto de inflexión, como apuntamos al principio, ya que la segunda derivada se anula en tres medios y la tercera no vale cero en ningún punto:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i37) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+diff(-x+(x-1)^2+2,x,2);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_9.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+En conclusión, aunque la concavidad y convexidad del polinomio varía, no lo hace así su monotonía. El polinomio es estrictamente creciente para todo x y, por tanto, no tiene extremos <BR>
+relativos ni absolutos...
+</P>
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+SEGUNDO EJERCICIO
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Calcula el polinomio de interpolación de Lagrange de la función y=cos(x) en los nodos -pi/2, 0 y pi/2<BR>
+¿cuál es la diferencia entre el valor de la función coseno en o,1 y el valor del polinomio en ese punto?
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i38) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+nodos:[[-%pi/2,0],[%pi/2,0],[0,1]];
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_10.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i39) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+lagrange(nodos);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_11.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Se puede apreciar que este polinomio viene de imponer que, si x vale pi/2, el resultado sea 0 (primer nodo, ya que (x-%pi/2) multiplica a todo), si x vale -pi/2, el resultado<BR>
+es cero (x+(%pi/2) multiplica a todo; y por último, si x vale 0, el resultado debe ser 1, por ello, como de los dos resultados anteriores nos queda que:<BR>
+(x-(pi/2))(x+(pi/2)) vale -pi^2/4 cuando x vale 0, multiplicamos todo por menos cuatro (para quitar el menos un cuarto) y dividimos entre pi^2 para que el resultado sea 1.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i40) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+cos(0.1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_12.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i41) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+lagrange(x):=-(4*(x-%pi/2)*(x+%pi/2))/%pi^2;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_13.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i42) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+numer:true;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_14.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i43) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+lagrange(0.1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_15.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i44) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+0.9959471526543-0.99500416527802;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_16.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+el error cometido es de 0.00094298... es decir, se aciertan los tres primeros decimales y se comete un error del orden de 10^-4<BR>
+
+</P>
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+TERCER EJERCICIO 
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+La gráfica de la función y=x³+1/%e divide el circulo centrado en el origen de radio 54202078 en dos partes. Calcula el área de cada una de ellas y la logitud de la gráfica <BR>
+en la circunferencia.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i45) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+R:54202078;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_17.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i46) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(yrange=[-R,R], user_preamble="set size ratio 1", implicit(R²=x²+y²,x,-R,R,y,-R,R),explicit(x³+1/%e,x,-R,R));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_18.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+El problema de trabajar con números tan grandes como lo es 54202078 es que las gráficas no muestran realmente todos los puntos de la circunferencia y es dificil ver cómo cortan<BR>
+la función y la circunferencia.<BR>
+Por eso, y para evitarme problemas, voy a realizar el problema suponiendo que el radio es 5 y, a continuación, lo repetiré con el radio real.<BR>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i47) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+r:5;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_19.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i48) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-r,r], <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1", <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit(r²=x²+y²,x,-r,r,y,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(x³+1/%e,x,-r,r));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_20.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Esto es una aproximación de cómo la función corta a la circunferencia en realidad. Ahora, buscamos los puntos de corte.<BR>
+Dividimos la circunferencia en dos funciones:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i49) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+ty(x):=sqrt(r²-x²);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_21.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i50) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+func(x):=x³+1/%e;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_22.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Calculamos los puntos de corte
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i51) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+func(x)=ty(x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_23.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i52) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+%^2;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_24.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i53) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+%-25+x²;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_25.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i54) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+pol:(x^3+%e^-1)^2+x^2-25=0;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_26.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i55) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+numer:true;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_27.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i56) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+realroots(pol);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_28.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i57) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-r,r], <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1", <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit(r²=x²+y²,x,-r,r,y,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(x³+1/%e,x,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point_type=filled_circle,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points([[-1.717212468385696,func(-1.717212468385696)],[1.633386999368667,func(1.633386999368667)]]));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_29.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+El área total de la circunferencia la conocemos, es pi*r^2. Entonces, calculando el área de una de las partes, podemos calcular fácilmente la otra. Vamos a calcular el <BR>
+área de la parte de arriba. La dividiremos en dos partes también (dos integrales) :
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i58) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+bcx:-1.717212468385696;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_30.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i59) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+tcx:1.633386999368667;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_31.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i60) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-r,r], <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1", <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_width=2,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit(r²=x²+y²,x,-r,r,y,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_width=1,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(x³+1/%e,x,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point_type=filled_circle,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points([[bcx,func(bcx)],[tcx,func(tcx)]]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill_color=khaki,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filled_func=0,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(sqrt(r²-x²),x,-r,bcx),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(-sqrt(r²-x²),x,-r,bcx)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_32.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Calculamos este primer área como:  <BR>
+*nota: calculamos el áreaentre la parte superior de la circunferencia y el eje x, y multiplicamos por dos para calcular el área de abajo, que es similar a la de arriba.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i61) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+A1: 2*integrate(sqrt(r²-x²), x, -r, bcx);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_33.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i62) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-r,r], <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1", <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_width=2,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;implicit(r²=x²+y²,x,-r,r,y,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_width=1,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(x³+1/%e,x,-r,r),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;point_type=filled_circle,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;points([[bcx,func(bcx)],[tcx,func(tcx)]]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill_color=khaki,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filled_func=0,<BR>
+&nbsp;&nbsp;&nbsp;explicit(sqrt(r²-x²),x,-r,bcx),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(-sqrt(r²-x²),x,-r,bcx),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill_color=coral,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filled_func=x³+1/%e,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicit(sqrt(r²-x²),x,bcx,tcx)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_34.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Este segundo área, A2, se calcula como:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i63) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+numer:true;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_35.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i64) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+A2:integrate(sqrt(r²-x²)-(x³+1/%e), x, bcx, tcx);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_36.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Llamaremos a la suma de A1 y A2   Aa, y la otra mitad de la circunferencia será Ab=Ac-Aa<BR>
+donde Ac=area_de_la_circunferencia=pi*r²
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i65) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+Aa:A1+A2;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_37.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i66) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+Ac:%pi*r²;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_38.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i67) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+Ab=Ac-Aa;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_39.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Sea f una función derivable con derivada continua en el intervalo [a, b]. La longitud del arco<BR>
+de la curva y = f (x) entre x = a y x = b es<BR>
+Z b q<BR>
+longitud = (integral entre a y b de) sqrt(1 + f'(x)²) dx.<BR>
+longitud de la función en la circunferencia:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i68) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+a(x):=x³-1/%e;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_40.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i69) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+diff(a(x),x,1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_41.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i70) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+integrate(sqrt(1+diff(a(x),x)²),x,bcx,tcx);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_42.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Como resulta complicado calcular una primitiva de la función, utilizamos un método numérico.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i71) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+quad_qags(sqrt(1+diff(a(x),x)²), x, bcx, tcx);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_43.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i72) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+romberg(sqrt(1+diff(a(x),x)²), x, bcx, tcx);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_44.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+estos dos metodos coinciden en los tres primeros decimales, así que nos quedamos con ellos. Ese sería el resultado de la longitud.
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Ahora que ya he explicado cómo podríamos hacerlo, voy a hacer las cuentas con los numericos grandes:<BR>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i73) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+circ(x):=sqrt(R²-x²);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_45.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i74) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+func(x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_46.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+puntos de corte
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i75) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+numer:true;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_47.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i76) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+a:func(x)=circ(x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_48.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i77) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+a²;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_49.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i78) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+p:a²+x²-2937865259518084;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_50.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i79) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+realroots(p);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_51.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i80) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+punto1x:378.4472129642963;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_52.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i81) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+punto2x:-378.447214692831;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_53.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i82) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+area1: 2*integrate(sqrt(R²-x²),x,-R,punto2x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_54.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i83) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+2*quad_qags(sqrt(R²-x²), x, -R, punto2x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_55.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i84) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+2*romberg(sqrt(R²-x²), x, -R, punto2x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_56.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+me voy a quedar con el valor 4.61*10¹⁵ 
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i85) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+area2:integrate(sqrt(R²-x²)-(x³+1/%e),x,punto2x,punto1x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_57.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i86) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+areatotal1:area1+area2;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_58.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i87) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+areadelcirculo:%pi*R²;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_59.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i88) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+areatotal2:areadelcirculo-areatotal1;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_60.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Las áreas son casi iguales, lo que explica el dibujo que sale cuando intentas dibujar esto. 
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Ahora la longitud de la gráfica.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i89) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+grafica(x):=x³-1/%e;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_61.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i90) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+diff(grafica(x),x,1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_62.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+vamos a calcular la longitud con metodos numéricos.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i91) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+quad_qags(sqrt(1+diff(a(x),x)²), x, punto2x, punto1x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_63.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i92) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+romberg(sqrt(1+diff(a(x),x)²), x, punto2x, punto1x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ENERO_img/ENERO_64.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+CONCLUSIÓN.<BR>
+<BR>
+El área de la prime parte: 4.614787958269064*10^15<BR>
+El área de la segunda parte: 4.61478795826962*10^15<BR>
+La longitud de la gráfica: 1.0840428213500825*10^8
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

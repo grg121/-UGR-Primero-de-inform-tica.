@@ -1,0 +1,57 @@
+#include<iostream>
+#include"alumno.h" 
+#include"examen.h"
+
+using namespace std; 
+
+double NotaMedia(alumno entrada){
+	double media = 0 ;
+	for(int i=0 ; i<entrada.n_examenes ; i++){
+		media += entrada.l_examenes[i].nota ; 
+	}
+
+	media /= entrada.n_examenes ;
+
+	return media ;
+} 
+
+double NotaMax(alumno entrada){
+	double max = 0 ;
+
+	for(int i=0 ; i<entrada.n_examenes ; i++){
+		if(entrada.l_examenes[i].nota > max)
+			max = entrada.l_examenes[i].nota ;
+	}
+	return max ;
+}  
+	
+double NotaMin(alumno entrada){
+	
+	double min = 10 ;
+
+	for(int i=0 ; i<entrada.n_examenes ; i++){
+		if(entrada.l_examen[i].nota < min)
+			min = entrada.l_examenes.nota[i] ;
+	}
+	return min ;
+} 
+	
+
+void ImprimeDatos(alumno entrada){
+
+	cout << "\nNombre: " ;
+	int lect = 0 ;
+	do{char salida = entrada.nombre[lect] ;
+	cout << salida ;
+	}while(salida != '\0') ;
+
+	cout << endl ;
+
+	cout << "\nNota media: " << NotaMedia(entrada) ;
+	cout << "\nNota minima: " << NotaMin(entrada) ;
+	cout << "\nNota maxima: " << NotaMax(entrada) ;
+
+}
+
+	
+	

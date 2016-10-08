@@ -1,0 +1,221 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Dibuja la elipse centrada en (-1,2) de semiejes 2y3 y los rectángulos de área sqrt(15) inscritos en ella.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-1.2,5.2],
+    xrange=[-3.2,1.2],
+    transparent=true,
+    ellipse(-1,2,2,3,0,360),
+    points([-1,1],[2,2])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+La fórmula de los puntos de la elipse sería:  (x+1)^2 / 4   +  (y-2)^2 / 9 = 1 
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse: ((x+1)^2)/4 + ((y-2)^2)/9 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(elipse,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+es decir, que la gráfica se puede dividir en dos partes de la forma:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-1.2,5.2],
+    xrange=[-3.2,1.2],
+    transparent=true,
+    explicit((3*sqrt(-x^2-2*x+3)+4)/2,x,-3,1),
+    color=red,
+    explicit(-(3*sqrt(-x^2-2*x+3)-4)/2,x,-3,1),
+    color=green,
+    points([-1,1],[2,2])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+podemos definir una funcion en cada parte para obtener puntos de la elipse que pueden ser vértices del rectángulo. Un rectángulo inscrito en la elipse sería, por ejemplo:
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+top(x):=(3*sqrt(-x^2-2*x+3)+4)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bot(x):=-(3*sqrt(-x^2-2*x+3)-4)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(0.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bot(-2.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-1.2,5.2],
+    xrange=[-3.2,1.2],
+    transparent=true,
+    explicit((3*sqrt(-x^2-2*x+3)+4)/2,x,-3,1),
+    color=red,
+    explicit(-(3*sqrt(-x^2-2*x+3)-4)/2,x,-3,1),
+    color=green,
+    points([-1,1,0,-2],[2,2,4.598076211353316,-0.59807621135331]),
+    line_width=2,
+    transparent=false,
+    fill_color=khaki,
+    color=red,
+    rectangle([0,4.598076211353316],[-2,-0.59807621135331])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Se puede deducir que la base del rectángulo es 2(x+1) y la altura 2(y-2), luego a:4(x+1)(y-2)
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+area: 4*(x+1)*(y-2) = sqrt(15);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(area,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+podemos calcular el vertice superior derecho de la forma:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse: (3*sqrt(-x^2-2*x+3)+4)/2 = y;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion: (3*sqrt(-x^2-2*x+3)+4)/2 =(8*x+sqrt(15)+8)/(4*x+4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion:ecuacion*2*(4*x+4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    explicit( ((4*x+4)*(3*sqrt(-x^2-2*x+3)+4))/2*(8*x+sqrt(15)+8),x,-3,1));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+se aprecia la existencia de, al menos, dos raices en el intervalo que abarca la elipse.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-10,20],
+    explicit( ((4*x+4)*(3*sqrt(-x^2-2*x+3)+4))/2*(8*x+sqrt(15)+8),x,-1.6,-1.4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion: ((4*x+4)*(3*sqrt(-x^2-2*x+3)+4))/2*(8*x+sqrt(15)+8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(ecuacion, x, -1.6, -1.4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(-1.484122918275927);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Con los datos obtenidos, paso a dibujar la gráfica de la elipse con el rectángulo de area raiz de quince inscrito en ella:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-1.2,5.2],
+    xrange=[-3.2,1.2],
+    transparent=true,
+    explicit((3*sqrt(-x^2-2*x+3)+4)/2,x,-3,1),
+    color=red,
+    explicit(-(3*sqrt(-x^2-2*x+3)-4)/2,x,-3,1),
+    color=green,
+    points([-1,1,0,-2],[2,2,4.598076211353316,-0.59807621135331]),
+    line_width=2,
+    transparent=false,
+    fill_color=goldenrod,
+    color=dark-red,
+    rectangle([-1.484122918275927,4.910782755548754],[-0.51587708172407,-0.91078275554875])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+2*(-1+1.484122918275927)+-1.484122918275927;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+4.910782755548754 - 2*(4.910782755548754-2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bot(-0.51587708172407);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+comprobacion:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+b: +1.484122918275927 - 0.51587708172407;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a: 4.910782755548754 + 0.91078275554875;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a*b;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+sqrt(15.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+quiero creer que existen errores debido al uso de cifras decimales.
+
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+Otra posible solución...
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-10,20],
+    explicit( ((4*x+4)*(3*sqrt(-x^2-2*x+3)+4))/2*(8*x+sqrt(15)+8),x,-1.2,-0.8));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(ecuacion, x, -1.2, -0.9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+esta no parece una solución viable. 
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

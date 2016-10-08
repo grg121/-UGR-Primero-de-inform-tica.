@@ -1,0 +1,28 @@
+testimagen.cpp es para comprobar que las funciones funcionan cargando la imagen degradado
+
+Despues se utilizo tesplano para el apartado 4(extraer imagenes de la gioconda)
+
+3º testarteAscii.cpp el apartado 5
+4ºarteAscii.cpp pata el apartado 6
+
+- OJO!! al crear un archivo.txt en windows que en linux no son iguales los saltos
+  de linea.
+- si creamos un archivo como entrada.txt
+  y cuando escribimos (bin/arteASCII2 < entrada.txt)
+  y nos arramos de estar escribiendo todo el rato 
+
+- si el archio.txt lo tenemos creado desde windows podemos poner este comando.
+  (perl -pi -w -e 's/\r\n/\n/g;' grises.txt)  
+
+Practica6
+--> Para comprobar el suma hay que poner:
+	 valgrind --leak-check=full --track-origins=yes ./bin/suma imagenes/lena.pgm imagenes/gato.pgm holass 
+  o solo con:
+		/bin/suma imagenes/lena.pgm imagenes/gato.pgm holass 
+--> Para el bin/arteASCCI2 :
+		valgrind --leak-check=full --track-origins=yes ./bin/arteASCII2 < entrada1.txt
+  O tambien bin/arteASCII2, luego te pide imagenes/gio.pgm, despues imagenes/grises.txt 		
+
+--> Para el bin/testimagen
+	  valgrind --leak-check=full --track-origins=yes ./bin/testimagen
+  O tambien bin/testiamgen	  

@@ -1,0 +1,164 @@
+<!-- R Commander Markdown Template -->
+
+Replace with Main Title
+=======================
+
+### Your Name
+
+### `r as.character(Sys.Date())`
+
+```{r echo=FALSE}
+# include this code chunk as-is to set options
+knitr::opts_chunk$set(comment=NA, prompt=TRUE, out.width=750, fig.height=8, fig.width=8)
+library(Rcmdr)
+library(car)
+library(RcmdrMisc)
+```
+
+
+
+
+```{r}
+nombre <- c("Juan","Salvador","Luis","José","Lola","Daniel","David","Carlos","Agustín","Maite")
+```
+
+```{r}
+nombre
+```
+
+```{r}
+nombre[4]
+```
+
+```{r}
+edad <- c(20,21,20,19,19,18,20,18,19,19)
+```
+
+
+```{r}
+media <- c(6.3,9.1,5.2,3.1,5.8,8.6,2.2,6.3,9.3,9.5)
+```
+
+
+```{r}
+H <- "H"
+```
+
+```{r}
+M <- "M"
+```
+
+```{r}
+sexo <- c(H,H,H,H,M,H,H,H,H,M)
+```
+
+```{r}
+data <- data.frame(nombre,edad,sexo,media)
+```
+
+```{r}
+data
+```
+
+```{r}
+save("data",file="./data.RData")
+```
+
+```{r}
+names(data)
+```
+
+```{r}
+data$altura <- c(1.75,1.80,1.77,1.75,1.71,1.64,1.69,1.95,1.75,1.67)
+```
+
+```{r}
+data
+```
+
+```{r}
+names(data)
+```
+
+```{r}
+altos <- subset(data, subset=altura>1.70)
+```
+
+```{r}
+altos
+```
+
+```{r}
+row.names(altos) <- as.character(altos$nombre)
+altos$nombre <- NULL
+```
+
+
+```{r}
+data
+```
+
+```{r}
+altos
+```
+
+```{r}
+data <- within(data, {
+  ESTADO <- Recode(media, '5:10 = "APROBADO"; 0:4.99 = "SUSPENSO"', as.factor.result=TRUE)
+})
+```
+
+```{r}
+data
+```
+
+```{r}
+data$altura_cm <- with(data, altura*100)
+```
+
+```{r}
+data
+```
+
+```{r}
+data$ObsNumber <- 1:10
+```
+
+```{r}
+data
+```
+
+```{r}
+data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=FALSE))
+```
+
+```{r}
+data
+```
+
+
+
+```{r}
+data
+```
+
+```{r}
+data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('joven','viejo')))
+```
+
+```{r}
+data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('joven','viejo')))
+```
+
+```{r}
+data
+```
+
+```{r}
+data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('grupo A','grupo B')))
+```
+
+```{r}
+data
+```
+

@@ -1,0 +1,72 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1 ",
+    transparent=true,
+    ellipse(-2,2,3,3,0,360),
+    implicit(x^2-y^2=5,x,-6,2,y,-2,6));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+o bien:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    user_preamble="set size ratio 1 ",
+    transparent=true,
+    implicit((x+2)^2+(y-2)^2=9,x,-5,1,y,-1,5),
+    implicit(x^2-y^2=5,x,-6,2,y,-2,6));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+buscamos los puntos de corte de:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse:(x+2)^2+(y-2)^2=9;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+y
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+hiperbola: x^2-y^2=5;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+probamos con solve:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([elipse,hiperbola], [x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+nos interesan las soluciones reales:
+[x=-2.436623445355914,y=-0.96805657156791],
+[x=-4.404220779220779,y=3.794358507734304].
+
+DIBUJAMOS LAS GRÁFICAS Y LOS PUNTOS DE CORTE:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1 ",
+    transparent=true,
+    line_width=1,
+    color=black,
+    implicit((x+2)^2+(y-2)^2=9,x,-5,1,y,-1,5),
+    color=blue,
+    implicit(x^2-y^2=5,x,-6,2,y,-2,6),
+    point_type=filled_circle,
+    color=red,
+    points([-2.436623445355914,-4.404220779220779],[-0.96805657156791,3.794358507734304]));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

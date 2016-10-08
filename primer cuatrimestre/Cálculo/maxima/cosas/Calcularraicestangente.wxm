@@ -1,0 +1,36 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Soluciones de tan(x) - 1/x = 0 en ]0, pi/2[
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= tan(x) - (1/x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    grid=true,
+    yrange=[-20,20],
+    explicit(f(x),x,0,%pi/2),
+    color=red,
+    point_type= filled_circle,
+    points([0.86033358901937],[0]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+como la funcion tiende a infinito y menos infinito en funcion de si x tiende a mas infinito o menos infinito respectivamente, y se puede apreciar que se trata de una funcion 
+inyectiva, solo existe una raiz, y se puede encontrar con la funcion find roots.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x), x, 0.6, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(0.86033358901937);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

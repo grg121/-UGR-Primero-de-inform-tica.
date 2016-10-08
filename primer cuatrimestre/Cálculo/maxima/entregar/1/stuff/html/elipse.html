@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>elipse</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Dibuja la elipse centrada en (-1,2) de semiejes 2y3 y los rectángulos de área sqrt(15) inscritos en ella.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-1.2,5.2],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;xrange=[-3.2,1.2],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(-1,2,2,3,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([-1],[2]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_0.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Partiendo de que la elipse está centrada en (-1,2), podemos afirmar que la esquina superior derecha del rectangulo estará en el punto (x-1,y+2) y la esquina inferior<BR>
+izquierda, en el punto (-x-1,2-y) donde x e y son la distancia (horizontal y vertical, respectivamente) desde el centro del rectángulo hasta la esquina superior derecha.<BR>
+Entonces la base del rectángulo es:  B = 2(x-1), y la altura, A = 2(2+y)
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i16) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+B: 2*(x-1);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_1.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i17) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+A: 2*(2+y);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_2.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i18) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+AREA: A*B;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_3.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+    Además, por la fórmula general de la elipse; debe cumplirse que, para un punto cualquiera: ((x-xo)^2)/a^2 + ((y-yo)^2)/b^2 = 1 donde xo, yo son las coordenadas<BR>
+del centro de la elipse y a, b son los semiejes mayor y menor, respectivamente. ((x+1)^2)/3^2 + ((y-2)^2)/3^2 = 1 = elipse: ((x+1)^2) + ((y-2)^2))/9 = 1
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i21) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+ ((x+1)^2)/3^2 + ((y-2)^2)/3^2 = 1;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_4.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i22) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+elipse: ((x+1)^2 + ((y-2)^2))/9 = 1;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_5.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i27) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+area: AREA = sqrt(15);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_6.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i28) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+linsolve([elipse, area], [x,y]);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_7.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+No es lo que buscamos. Podemos probar a resolver "area" y "elipse" por separado y sustituir...
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i46) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve(area,y);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_8.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i42) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve(elipse,y);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_9.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+igualamos<BR>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i43) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+2-sqrt(-x^2-2*x+8) = -(8*x-sqrt(15)-8)/(4*x-4);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_10.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i47) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+resolver:2-sqrt(-x^2-2*x+8) = -(8*x-sqrt(15)-8)/(4*x-4);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_11.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i48) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve(resolver,x);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="elipse_img/elipse_12.png">
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

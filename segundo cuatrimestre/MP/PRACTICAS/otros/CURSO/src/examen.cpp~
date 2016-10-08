@@ -1,0 +1,22 @@
+#include<iostream>
+#include"alumno.h"
+
+using namespace std; 
+
+
+void leeExamen(examen entrada ){
+	char lectura = ' ' ;
+	int escritura = 0 ;
+
+	do{
+		cin >> lectura ;
+		entrada.asignatura[escritura] ;
+		escritura++ ; 
+	} while(lectura != '\n') 
+
+	cin >> entrada.nota ; 
+}
+
+
+
+

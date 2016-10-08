@@ -1,0 +1,2 @@
+imagenes/gio.pgm
+grises.txt

@@ -1,0 +1,4 @@
+imagenes/gio.pgm
+imagenes/lena.pgm
+holas
+

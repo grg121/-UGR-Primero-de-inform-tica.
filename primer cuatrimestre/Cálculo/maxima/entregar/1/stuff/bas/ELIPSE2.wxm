@@ -1,0 +1,228 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Dibuja la elipse centrada en (-1,2) de semiejes 2y3 y los rectángulos de área sqrt(15) inscritos en ella.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=red,
+    transparent=true,
+    ellipse(-1,2,3,2,0,360),
+    points([-1],[2])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+La fórmula de los puntos de la elipse sería:  (x+1)^2 / 9   +  (y-2)^2 / 4 = 1 
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+elipse: ((x+1)^2)/9 + ((y-2)^2)/4 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(elipse,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+es decir, que la gráfica se puede dividir en dos partes de la forma:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    transparent=true,
+    explicit((2*sqrt(-x^2-2*x+8)+6)/3,x,-4,2),
+    color=red,
+    explicit(-(2*sqrt(-x^2-2*x+8)-6)/3,x,-4,2)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+podemos definir una funcion en cada parte para obtener puntos de la elipse que pueden ser vértices del rectángulo. Un rectángulo inscrito en la elipse sería, por ejemplo:
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= (2*sqrt(-x^2-2*x+8)+6)/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x):= -(2*sqrt(-x^2-2*x+8)-6)/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(1.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(-3.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    transparent=true,
+    explicit((2*sqrt(-x^2-2*x+8)+6)/3,x,-4,2),
+    color=red,
+    explicit(-(2*sqrt(-x^2-2*x+8)-6)/3,x,-4,2),
+    color=green,
+    points([-1,1,0,-2],[2,2,4.598076211353316,-0.59807621135331]),
+    line_width=2,
+    transparent=false,
+    transparent=true,
+    color=purple,
+    rectangle([1,3.49071198499986],[-3,0.50928801500014])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Para realizar los calculos de las coordenadas de los vertices del rectángulo que nos piden, vamos a transladar la elipse al centro del eje de coordenadas.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-2.2,2.2],
+    xrange=[-3.2,3.2],
+    color=green,
+    explicit((2*sqrt(9-x^2))/3,x,-3,3),
+    color=blue,
+    explicit(-(2*sqrt(9-x^2))/3,x,-3,3));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+La ecuación de la elipse quedaría:  x^2/2^2  +  y^2/3^2 = 1
+Además, dado que el rectángulo también estaría centrado en el (0,0), el area del rectángulo sería:
+A = x*y = sqrt(15) donde (x,y) son las coordenadas de la esquina superior derecha, que procedemos a calcular:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+eclipse: x^2/9 + y^2/4 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+area: 4*x*y = sqrt(15);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(area,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(eclipse,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Nota: aparecen dos funciones, una se refiere a los valores de imagen positiva, y la otra a los valores de imagen negativa. En realidad, para calcular
+la esquina superior derecha, solo necesitamos la que tiene valores positivos. 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion: sqrt(15)/(4*x) = (3*sqrt(4-x^2))/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(ecuacion,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion:ecuacion^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ecuacion:ecuacion*16*x^2*4;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(ecuacion,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ahora pintamos los puntos obtenidos, para comprobar cuales pueden hacer de vértice superior. (La imagen de estos valores de x se calcula con la funcion que definiremos a continuación;
+no es más que la ecuación que, hemos dicho, define a los puntos con imagen positiva de la elipse. (Nota, no tomamos los valores negativos, porque buscamos esquinas superiores derechas.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+top(x):=(2*sqrt(9-x^2))/3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(sqrt(sqrt(129)+12)/sqrt(6));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+top(sqrt(12-sqrt(129))/sqrt(6));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-2.2,2.2],
+    xrange=[-3.2,3.2],
+    color=green,
+    explicit((2*sqrt(9-x^2))/3,x,-3,3),
+    color=blue,
+    explicit(-(2*sqrt(9-x^2))/3,x,-3,3),
+    point_type=filled_circle,
+    color=red,
+    points([sqrt(sqrt(129)+12)/sqrt(6)],[(2*sqrt(9-(sqrt(129)+12)/6))/3]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpprec : 32;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+*nota: el segundo valor da errores de exactitud decimal... vamos a intentar simplificar: 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+a:float(sqrt(sqrt(129)+12)/sqrt(6));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b:bfloat((2*sqrt(9-12-sqrt(129)/6))/3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+no parece tener una solución real.
+En conclusión, solo existe un rectángulo que cumple lo establecido, y tiene por vértice el punto que se dibujó en la gráfica anterior.
+Las coordenadas del punto son x=sqrt(sqrt(129)+12)/sqrt(6)  e y=2*sqrt(9-(sqrt(129)+12)/6))/3
+Por tanto, la esquina inferior izquierda será igual, pero con signos negativos.
+Para dibujar el rectángulo en la elipse del principio simplemente sumamos (y restamos) los valores de x e y obtenidos a las coordenadas del centro para obtener
+la esquina superior derecha (y la inferior izquierda) 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-2.2,2.2],
+    xrange=[-3.2,3.2],
+    color=green,
+    explicit((2*sqrt(9-x^2))/3,x,-3,3),
+    color=blue,
+    explicit(-(2*sqrt(9-x^2))/3,x,-3,3),
+    point_type=filled_circle,
+    color=red,
+    points([sqrt(sqrt(129)+12)/sqrt(6)],[(2*sqrt(9-(sqrt(129)+12)/6))/3]),
+    transparent=true,
+    rectangle([sqrt(sqrt(129)+12)/sqrt(6),(2*sqrt(9-(sqrt(129)+12)/6))/3],[-sqrt(sqrt(129)+12)/sqrt(6),-(2*sqrt(9-(sqrt(129)+12)/6))/3]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Que simplemente bastaría transladar al entorno deseado:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    color=green,
+    transparent=true,
+    ellipse(-1,2,3,2,0,360),
+    point_type=filled_circle,
+    color=red,
+    transparent=true,
+    rectangle([-1+(sqrt(sqrt(129)+12)/sqrt(6)),(2+(2*sqrt(9-(sqrt(129)+12)/6))/3)],[-1-(sqrt(sqrt(129)+12)/sqrt(6)),2-((2*sqrt(9-(sqrt(129)+12)/6))/3)]));
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

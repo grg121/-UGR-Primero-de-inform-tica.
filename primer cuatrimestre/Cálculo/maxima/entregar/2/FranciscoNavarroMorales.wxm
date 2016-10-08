@@ -1,0 +1,223 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: title   start ]
+Ejercicio 5.10
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 5.10. En el método de bisección siempre se elige el punto medio del intervalo como
+pivote para dividir el intervalo en dos partes iguales. Escribe un programa que elija como pivote
+un número aleatorio del intervalo. Compara los resultados que se obtienen para la función 
+f (x) =x^3 − 5 en el intervalo [−10, 10].
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+biseccion(expr,var,ext_inf,ext_sup):=
+block(
+numer:true,
+[a,b,c,k,err:10^(-8),prec:10^(-9)],
+/* extremos del intervalo */
+a:ext_inf,
+b:ext_sup,
+/* ¿número de pasos? */
+
+/* Siempre ocurre que error < [b-a] 
+    En cada división, el error cometido se disminuye en función de lo cerca
+   que esté el punto medio elegido al azar de la respuesta.
+    Esto hace imposible establecer un número de pasos exacto. */
+
+local(f),
+define(f(x),subst(x,var,expr)),
+
+
+/* comprobamos las condiciones iniciales */
+if f(a)*f(b)>0 then error("Error: no hay cambio de signo"),
+
+/* ¿se alcanza la solución en los extremos? */
+if abs(f(a)) < prec then return(a),
+if abs(f(b)) < prec then return(b),
+
+/* Definimos el error máximo a cometer en la siguiente selección de c. */
+
+emax: abs(b-a),
+
+while (emax > err) do
+(
+aleatorio: random(emax+0.0),
+/* además del error maximo, emax es la distancia entre a y b
+random calculará un número entre 0 y la distancia entre a y b
+y le sumara el menor de ambos. Ese valor será c.
+IMPORTANTE: si no se pone  0.0 random da numeros enteros y llega un punto en el que siempre da 1 o 0
+de esta forma se consiguen numeros con decimales y el programa funciona correctamente. */
+
+if a<b then
+c:aleatorio+a
+else
+c:aleatorio+b,
+if abs(f(c))< prec then return (c),
+if f(a)*f(c)< 0 then b:c else a:c,
+emax: abs(b-a)
+),
+c
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+biseccion(x^3-5,x,-10,10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+realroots(x^3-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Tenemos los ocho decimales correctos que búscabamos.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: title   start ]
+Ejercicio 5.14
+
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: comment start ]
+El método de regula falsi o de la falsa posición es muy parecido al método de bisección. La única diferencia es que se cambia el punto medio por el punto
+de corte del segmento que une los puntos (a, f (a)) y (b, f (b)) con el eje de abscisas.
+Escribe un programa que utilice este método. Para la función f (x) = x^2 − 5 en el intervalo [0, 4], comparalos resultados obtenidos. ¿Cuál es mejor?
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: comment start ]
+Nota: sea m la pendiente del segmento...
+
+m = variacion de y / variacion de x = (Y-Yo) / (X-Xo) ---> Y-Yo = m (X-XO)
+
+Y = Yo + m(X-Xo)
+
+donde m = f(b)-f(a) / b-a
+      Yo = f(b)
+      Xo = b
+
+entonces Y= f(b) + f(b)-f(a)/b-a (x-b)
+si igualamos a cero y despejamos x:
+
+X = b - f(b)(b-a)/f(b)-f(a)
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+regulafalsi(expr,var,ext_inf,ext_sup):=
+block(
+numer:true,
+[a,b,c,k,err:10^(-8),prec:10^(-9)],
+/* extremos del intervalo */
+a:ext_inf,
+b:ext_sup,
+
+/* ¿número de pasos? */
+
+/* El error nunca es mayor que b-a 
+    La variación del error depende de la forma que tenga la función
+    --> no hay un número fijo de pasos, usamos un bucle while. */
+
+local(f),
+define(f(x),subst(x,var,expr)),
+
+
+/* comprobamos las condiciones iniciales */
+if f(a)*f(b)>0 then error("Error: no hay cambio de signo"),
+
+/* ¿se alcanza la solución en los extremos? */
+if abs(f(a)) < prec then return(a),
+if abs(f(b)) < prec then return(b),
+
+/* Definimos el error máximo a cometer en la siguiente selección de c. */
+
+emax: b-a,
+
+while (emax > err) do
+(
+c: b-(f(b)*(b-a))/(f(b)-f(a)),
+
+if abs(f(c))< prec then return (c),
+if f(a)*f(c)< 0 then b:c else a:c,
+emax: b-a
+),
+c
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+regulafalsi(x^2-5,x,0,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+realroots(x^2-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+biseccion(x^2-5,x,0,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Las dos funciones, bisección y regulafalsi, obtienen resultados con un error máximo menor que el que nos piden, por lo que ambas son correctas.
+Ahora bien, ¿cuál es mejor o más rápida? Verdaderamente, las operaciones que realiza regulafalsi para calcular c son más complejas que las de bisección y,
+si bien es cierto que en algunos casos puede encontrar la solución mucho más deprisa, existen casos (dependiendo de la curvatura de la función) en los que 
+el número de pasos es mucho mayor. El método de bisección divide siempre el error máximo cometido entre dos. El regula falsi, en algunos casos, no disminuye ni a la mitad
+el error cometido, y necesita dar más pasos.
+En conclusión, ninguno es necesariamente mejor o peor, aunque el regula falsi puede dar resultados muy buenos en algunas ocasiones, la bisección es un método más seguro
+pues da buenos resultados siempre.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: title   start ]
+Ejercicio 5.16
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: comment start ]
+El método de la secante evita calcular la derivada
+de una función utilizando recta secantes. Partiendo
+de dos puntos iniciales x 0 y x 1 , el siguiente es el
+punto de corte de la recta que pasa por (x 0 , f (x 0 )) y
+(x 1 , f (x 1 )) y el eje de abscisas. Se repite el proceso ahora con x1 y x2 y así sustantivamente.
+Escribe un programa que utilice este método. Para la función f (x) = x^2−5, compara los resultados
+obtenidos con el método de Newton-Raphson. ¿Cuál es mejor?
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+secante(expr,var,ini0,ini1):=block(
+    [x0:ini0,x1:ini1,j,prec:10^(-10)],
+    local(f),
+    define(f(x),subst(x,var,expr)),
+    
+    for i:1 thru 15 do(
+        j:i,
+        ult: x0,
+        x0: x1-(f(x1)*(x1-x0))/(f(x1)-f(x0)),
+        if abs(x0-ult)<prec then return()
+        ),
+    if j=15 then error("elige otro valor inicial") else x0
+);
+nr(x^3-5,x,12.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+secante(x^2-5,x,2.5,3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+realroots(x^2-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load(mnewton);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+mnewton(x^2-5,x,3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Como en el caso anterior, cada método tiene sus pros y sus contras. Este método es más fácil de implementar y obtiene resultados bastante similares así
+que supongo que en muchos casos combiene utilizarlo. Sin embargo, Newton-Raphson quizá aporte mayor exactitud y obtenga los resultados en menos pasos.
+   [wxMaxima: comment end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

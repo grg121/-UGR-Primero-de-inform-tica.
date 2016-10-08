@@ -1,0 +1,18 @@
+#! /bin/bash
+
+argumento1=`test -d $1 && echo "true" || echo "false" `
+argumento2=`echo $2 | grep -q "[0-9]\+" && echo true || echo false`
+#numeroentero=`[0-9]\+`
+#argumento2=` if [[ $2 =~ $numeroentero ]] ; then echo true; else echo false; fi`
+#argumento2=` [ $2 =~ "[0-9]\+" ] && echo true || echo false`
+
+if [ $# -eq 2 ]
+then
+        if [ $argumento1 == "true" ] && [ $argumento2 == "true" ] ;
+        then find -size -$2 $1 < archivosSizN.txt
+              printf "\nEl archivo ha sido creado correctamente.\n";
+        else
+        printf "\nLos argumentos dados no son válidos.\n" ;
+        fi
+else printf "\nEl número de argumentos introducido es incorrecto.\n" ;
+fi

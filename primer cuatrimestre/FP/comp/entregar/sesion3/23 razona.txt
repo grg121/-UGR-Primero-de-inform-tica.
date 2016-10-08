@@ -1,0 +1,18 @@
+23. Razonar sobre la falsedad o no de las siguientes a?rmaciones:
+a) 'c' es una expresión de caracteres. 
+b) 4<3 es una expresión numérica.
+c) (4+3)<5 es una expresión numérica. 
+d) cout << a; da como salida la escritura en pantalla de una a
+e) ¿Qué realiza cin >> cte, siendo cte una constante entera?
+-----------------------------
+
+
+a) 'C' es una expresión de caracteres si se trata de un dato de tipo "char". En este caso, el computador
+almacena el código que lo representa en ASCII (en este caso 99) pero al aplicar un cout, imprime el caracter c.
+Si se trata de un dato de tipo entero (int) al poner 'c' entre comillas, asigna al dato entero el número que 
+representa a "c" (99) y al aplicar un cout devuelve dicho número entero (99). 
+
+b) y c) Ambas son expresiones numéricas a las que se aplica un operador lógico rlacional "<"
+d) Falso, ya que se han suprimido las comillas que deben contener a un caracter para que este se imprima en pantalla.
+cout << "a" ; sí que imprimiría en pantalla una a 
+e) Esta expresión otorga un valor a la constante cte; este valor debe ser introducido por el usuario, normalmente a través del teclado. 

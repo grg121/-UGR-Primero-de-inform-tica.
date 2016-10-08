@@ -1,0 +1,16 @@
+# Ejemplo de una función incompletamente especificada
+.i 4        # número de entradas 
+.o 1       # número de salidas 
+.ilb A B C D # nombre de las entradas 
+.ob Z       # nombre de la salida 
+# Los mintérminos presentes se especifican con valor 1
+0000 1 
+0011 1 
+0101 1 
+1100 1 
+1101 1 
+# Los mintérminos que representan condiciones superfluas (mintérminos superfluos) se especifican con -
+0001 - 
+0010 - 
+1111 - 
+.e 

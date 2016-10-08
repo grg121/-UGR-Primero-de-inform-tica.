@@ -1,0 +1,100 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Definimos una función:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=log(x) - atan(x) + x^2 * (3*sin(x) - x );
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+y buscamos los puntos en los que corta el eje x:
+*Nota: la función no está definida en 0 ni en los números negativos.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    explicit(f(x),x,0,100));
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: comment start ]
+parece claro que el límite cuando x tiende a infinito es menos infinito... el log(x) tiende a infinito, la tangente a pi/2 y, la parte de x^2 va multiplicada por un seno, por lo que 
+no tiende a nada en particular y por otra x de signo negativo. Esto hace que la función tienda a menos infinito cuando x tiende a más infinito pues x^3 crece mucho más deprisa que el
+logaritmo de x y tiene signo negativo. 
+Para encontrar las raices del polinomio basta con ir acotando la gráfica de la función en intervalos cuyos extremos tomen valores de signo contrario y aplicar, en dichos intervalos, la
+orden "find roots"
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-10,10],
+    grid=true,
+    explicit(f(x),x,0,10));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Como la función no está definida en los números negativos (pues buscamos soluciones reales), un intervalo que contiene todos los cortes con el eje x de la gráfica es (0,10)
+que, a continuación, acotamos para separar los dos cortes que se producen:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-10,10],
+    grid=true,
+    explicit(f(x),x,0.1,2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x), x, 0.5, 2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Una de las soluciones de la ecuación sería: 0.80925284139144
+comprobamos:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(0.80925284139144);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+que se aproxima bastante a cero. El error reside en el uso de decimales con el ordenador, que provoca fallos de precisión al realizar aproximaciones y al guarar los números en memoria.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    yrange=[-10,10],
+    grid=true,
+    explicit(f(x),x,2,3));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+El otro intervalo es (2,3), por ejemplo, y en él obtenemos la raíz:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x), x, 2, 3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+que, si comprobamos:
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(2.256026373025133);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+toma un valor muy cercano a 0, también. 
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: title   start ]
+Conclusión.
+El polinomio tiene dos raices REALES: x=2.256026373025133 y x=0.80925284139144
+   [wxMaxima: title   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

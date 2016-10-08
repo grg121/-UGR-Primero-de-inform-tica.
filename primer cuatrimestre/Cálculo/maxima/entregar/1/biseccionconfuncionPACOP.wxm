@@ -1,0 +1,36 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: title   start ]
+BISECCION CON FUNCION GRG121#
+
+
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: input   start ] */
+bisec(inicio,final):=block([a,b,c],
+    numer:true,
+    f(x):=x^2-4,
+    a:inicio,
+    b:final,
+    signos: [f(a),f(b)],
+    if f(a)*f(b)>0 then(print("Error, signos iguales."), return(signos)),
+    if f(a) > 0 then(positivo:a, negativo:b) else(positivo:b, negativo:a),
+    err:10^(-6),
+    pr:10^(-5),
+    log2(x):=log(x)/log(2),
+    pasos:ceiling(log2((b-a)/err)),
+    for i:1 thru pasos do
+        (   
+        c:(positivo+negativo)/2,
+        if abs(f(c))<pr then(print("La solución es exacta."), return(c))
+        else(if f(c)>0 then positivo:c else negativo:c)),
+    print("La solucion es: ", c));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+bisec(2,4);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

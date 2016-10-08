@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>solucionesEcuacion</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Definimos una función:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i1) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+f(x):=log(x) - atan(x) + x^2 * (3*sin(x) - x );
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_0.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+y buscamos los puntos en los que corta el eje x:<BR>
+*Nota: la función no está definida en 0 ni en los números negativos.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i3) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(f(x),x,0,100));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_1.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+parece claro que el límite cuando x tiende a infinito es menos infinito... el log(x) tiende a infinito, la tangente a pi/2 y, la parte de x^2 va multiplicada por un seno, por lo que <BR>
+no tiende a nada en particular y por otra x de signo negativo. Esto hace que la función tienda a menos infinito cuando x tiende a más infinito pues x^3 crece mucho más deprisa que el<BR>
+logaritmo de x y tiene signo negativo. <BR>
+Para encontrar las raices del polinomio basta con ir acotando la gráfica de la función en intervalos cuyos extremos tomen valores de signo contrario y aplicar, en dichos intervalos, la<BR>
+orden "find roots"
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i12) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-10,10],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(f(x),x,0,10));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_2.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Como la función no está definida en los números negativos (pues buscamos soluciones reales), un intervalo que contiene todos los cortes con el eje x de la gráfica es (0,10)<BR>
+que, a continuación, acotamos para separar los dos cortes que se producen:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i27) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-10,10],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(f(x),x,0.1,2));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_3.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i26) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+find_root(f(x), x, 0.5, 2);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_4.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Una de las soluciones de la ecuación sería: 0.80925284139144<BR>
+comprobamos:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i28) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+f(0.80925284139144);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_5.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+que se aproxima bastante a cero. El error reside en el uso de decimales con el ordenador, que provoca fallos de precisión al realizar aproximaciones y al guarar los números en memoria.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i29) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;yrange=[-10,10],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;explicit(f(x),x,2,3));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_6.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+El otro intervalo es (2,3), por ejemplo, y en él obtenemos la raíz:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i30) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+find_root(f(x), x, 2, 3);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_7.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+que, si comprobamos:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i31) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+f(2.256026373025133);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="solucionesEcuacion_img/solucionesEcuacion_8.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+toma un valor muy cercano a 0, también. 
+</P>
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+Conclusión.<BR>
+El polinomio tiene dos raices REALES: x=2.256026373025133 y x=0.80925284139144
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

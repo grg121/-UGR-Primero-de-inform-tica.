@@ -1,0 +1,22 @@
+#include"examen.h"
+
+#ifndef _ALUMNO_H_
+#define _ALUMNO_H_
+
+	struct alumno {
+		static const int MAX = 10 ;
+		examen l_examenes[MAX] ;
+		int n_examenes = 0 ;
+		char nombre[20] ;
+		char apellido[20] ;
+	};
+
+		
+double NotaMedia(alumno entrada) ;
+double NotaMax(alumno entrada) ;
+double NotaMin(alumno entrada) ;
+void ImprimeDatos(alumno entrada) ; 
+
+#endif 
+
+

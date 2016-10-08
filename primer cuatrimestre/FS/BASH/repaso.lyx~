@@ -1,0 +1,404 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+BASH
+\end_layout
+
+\begin_layout Section
+órdenes básicas.
+\end_layout
+
+\begin_layout Description
+Man es el manual básico.
+ Es interesante utilizar ?texto o /texto para buscar dentro del manual.
+ Después, ctr+N o ctr + n sirven para avanzar o retroceder en las palabras
+ encontradas.
+\end_layout
+
+\begin_layout Description
+LS lista los contenidos del directorio 
+\end_layout
+
+\begin_layout Description
+pwd imprime el camino absoluto del directorio actual
+\end_layout
+
+\begin_layout Description
+mkdir crear directorios
+\end_layout
+
+\begin_layout Description
+rmdir borrar directorios
+\end_layout
+
+\begin_layout Description
+cat muestra el contenido de un archivo 
+\emph on
+o varios, 
+\emph default
+concatena archivos, copia archivos, crea archivos de texto o muestra los
+ caracteres invisibles de control.
+ 
+\end_layout
+
+\begin_layout Description
+cp
+\begin_inset space ~
+\end_inset
+
+archivo1
+\begin_inset space ~
+\end_inset
+
+archivo2 copia el archivo1 en archivo2.
+ Si archivo2 no existe, lo crea.
+\end_layout
+
+\begin_layout Description
+mv renombra archivos.
+\end_layout
+
+\begin_layout Description
+file muestra el tipo de archivo dado como argumento.
+\end_layout
+
+\begin_layout Description
+more visualiza un fichero por partes (similar a page, pg...)
+\end_layout
+
+\begin_layout Description
+rm borra archivos y directorios con contenido.
+ 
+\end_layout
+
+\begin_layout Description
+touch modifica la fecha y hora de los archivos dados como argumentos.
+ Si no exiten, los crea.
+\end_layout
+
+\begin_layout Description
+clear borra el contenido del terminal actual
+\end_layout
+
+\begin_layout Description
+tail muestra la parte final de un archivo (por defecto 10 lineas)
+\end_layout
+
+\begin_layout Description
+head muestra la parte inicial del contenido de un archivo (por defecto 10
+ lineas)
+\end_layout
+
+\begin_layout Description
+sort ordena el contenido de un archivo.
+\end_layout
+
+\begin_layout Subsection
+Metacaracteres de archivo
+\end_layout
+
+\begin_layout Description
+? Cualquier caracteres simple en la posición que se indique
+\end_layout
+
+\begin_layout Description
+* Cualquier secuencia de cero o más caracteres
+\end_layout
+
+\begin_layout Description
+[] lista de carácteres que pueden aparecer en la posición que se indique
+ (individualmente) Ejemplo: *.[ch] --> pepe.c juan.h luis.h 
+\end_layout
+
+\begin_layout Description
+{} conjuntos de palabras separadas por comas.
+\end_layout
+
+\begin_layout Section
+Permisos y redirecciones.
+\end_layout
+
+\begin_layout Standard
+usamos chmod para asignar o eliminar permisos.
+\end_layout
+
+\begin_layout Subsection
+Metacarácteres de redirección.
+\end_layout
+
+\begin_layout Description
+<
+\begin_inset space ~
+\end_inset
+
+nombre obtiene la entrada de una orden del archivo nombre
+\end_layout
+
+\begin_layout Description
+>
+\begin_inset space ~
+\end_inset
+
+nombre redirige la salida de una orden a un archivo nombre.
+ Si este existe, lo sobreescribe.
+\end_layout
+
+\begin_layout Description
+&>
+\begin_inset space ~
+\end_inset
+
+nombre La salida estándar y la de error se escriben en el archivo nombre.
+\end_layout
+
+\begin_layout Description
+>>
+\begin_inset space ~
+\end_inset
+
+nombre igual que > pero añade al final del archivo en lugar de sobreescribir.
+\end_layout
+
+\begin_layout Description
+&>> similar a lo anterior
+\end_layout
+
+\begin_layout Description
+2>
+\begin_inset space ~
+\end_inset
+
+nombre redirige la salida de error stándar a un archivo.
+\end_layout
+
+\begin_layout Description
+| cauce entre dordenes.
+\end_layout
+
+\begin_layout Description
+|& cauce que utiliza las dos salidas (estándar y error) de la primera orden
+ como entrada de la segunda.
+\end_layout
+
+\begin_layout Subsection
+Metacaracteres sintácticos
+\end_layout
+
+\begin_layout Description
+; separa ordenes que se ejecutan secuencialmente
+\end_layout
+
+\begin_layout Description
+() aislan ordenes separadas.
+ Las ordenes dentro del paréntesis se tratan como una sola.
+\end_layout
+
+\begin_layout Description
+&& La orden que sigue a && se ejecuta sólo si la orden anterior ha teido
+ éxito (no errores)
+\end_layout
+
+\begin_layout Description
+|| La orden que sigue a || se ejecuta sólo si falla la ejecución de la orden
+ anterior.
+\end_layout
+
+\begin_layout Section
+Variables, alias, órdenes de búsqueda y guiones.
+\end_layout
+
+\begin_layout Subsection
+Variables
+\end_layout
+
+\begin_layout Subsubsection
+Tipos.
+\end_layout
+
+\begin_layout Description
+De
+\begin_inset space ~
+\end_inset
+
+entorno
+\begin_inset space ~
+\end_inset
+
+o
+\begin_inset space ~
+\end_inset
+
+globales: son comunes a todos los shells.
+ Se pueden visualizar con env o printenv.
+ Por convención se usan letras mayúsculas para nombrarlas.
+\end_layout
+
+\begin_layout Description
+Locales sólo son visibles en el shell donde se definen y se les da valor.
+ Se muestran con la orden 
+\series bold
+set
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Además, existen variables que contienen secuencias de carácteres, que contienen
+ números, variables constantes y arrays.
+ 
+\end_layout
+
+\begin_layout Standard
+Para declarar un array: nombre(uno dos tres)...
+ usamos paréntesis y espacios.
+\end_layout
+
+\begin_layout Standard
+Para acceder a un elemento del array: ${nombre[i]}
+\end_layout
+
+\begin_layout Standard
+Variables especiales:
+\end_layout
+
+\begin_layout Description
+$BASH ruta de acceso completa usada para ejecutar bash
+\end_layout
+
+\begin_layout Description
+$HOME directorio raíz del usuario.
+\end_layout
+
+\begin_layout Description
+$PATH camino de búsqueda de ordenes.
+\end_layout
+
+\begin_layout Description
+$? código de retorno de la última orden ejecutada.
+\end_layout
+
+\begin_layout Standard
+Para borrar variables: 
+\series bold
+unset
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Para declarar variables con atributos especiales: 
+\series bold
+declare
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+-a para arrays
+\end_layout
+
+\begin_layout Standard
+-i para enteros
+\end_layout
+
+\begin_layout Standard
+las variables e pueden exportar con 
+\series bold
+export
+\series default
+ variable.
+\end_layout
+
+\begin_layout Subsection
+Diferentes tipos de comillas.
+\end_layout
+
+\begin_layout Standard
+para usar la salida de una orden como si fuese el valor de una variable
+ podemos usar:
+\end_layout
+
+\begin_layout Standard
+$(orden argumentos) o bien `orden argumentos`
+\end_layout
+
+\begin_layout Standard
+las comillas simples 'loquesea' hacen que se tome literalmente lo que hay
+ dentro, es decir, echo '$(ls -l)', por ejemplo, imprimirá, literalmente,
+ $(ls -l).
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

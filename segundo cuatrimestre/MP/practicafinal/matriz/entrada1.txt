@@ -1,0 +1,2 @@
+imagenes/lena.pgm
+imagenes/grises.txt

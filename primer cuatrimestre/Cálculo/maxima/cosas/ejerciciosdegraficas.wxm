@@ -1,0 +1,162 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: input   start ] */
+load(draw);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    fill_color=khaki,
+rectangle([0,0],[3,3])
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=blue,
+    key = "seno",
+    line_width=3,
+    explicit(sin(x),x,-2*%pi,2*%pi),
+    color=red,
+    key = "coseno ",
+    line_width = 1,
+    explicit(cos(x),x,-2*%pi,2*%pi)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    title="La función coseno es PAR. cos(x)=cos(-x)",
+    key= "coseno de X",
+    color= blue,
+    line_width=2,
+    explicit(cos(x),x,-2*%pi,2*%pi),
+    key= "coseno de -X",
+    color=purple,
+    explicit(cos(-x),x,-2*%pi,2*%pi),
+    xrange=[-7,7], yrange=[-2,2],
+xaxis=true,yaxis=true
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    key = "seno de X",
+    color = khaki,
+    line_width=2,
+    explicit(sin(x),x,-2*%pi,2*%pi),
+    key = "seno de -X",
+    color= coral,
+    explicit(sin(-x),x,-2*%pi,2*%pi),
+yrange=[-2,2],
+xaxis=true,yaxis=true
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+define(f(x),x^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw2d(
+    xrange=[-10,10],
+    yrange=[-10,50],
+    title=" COMPARANDO FUNCIONES",
+    key="Logaritmo de X",
+    color=light-green,
+    line_width=2,
+    explicit(log(x),x,0,10),
+    color=navy,
+    key="Exponencial de X",
+    explicit(exp(x),x,-40,10),
+    color=khaki,
+    key="X²",
+    explicit(f(x),x,0,10)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=khaki,
+    key= "coseno hiperbólico.",
+    line_width=2,
+    explicit(cosh(x),x,-2*%pi,2*%pi),
+color=red,
+explicit(cosh(-x),x,-2*%pi,2*%pi)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=blue,
+    key = "seno hiperbólico.",
+    line_width=2,
+    explicit(sinh(x),x,-2*%pi,2*%pi),
+    color=light-green,
+    explicit(sinh(-x),x,-2*%pi,2*%pi)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=purple,
+    line_width=2,
+    key="Argumento del coseno hiperbólico",
+    explicit(acosh(x),x,-2*%pi,2*%pi),
+    color=navy,
+    explicit(acosh(-x),x,-2*%pi,2*%pi)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=purple,
+    line_width=2,
+    key="Argumento del seno hiperbólico",
+    explicit(asinh(x),x,-2*%pi,2*%pi),
+    color=navy,
+    explicit(asinh(-x),x,-2*%pi,2*%pi)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    explicit(x^2,x,-2,4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l(x):=cos(x+1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    explicit(l(x),x,-%pi,%pi));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x):= if x>2 then x² else x^3;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(1.5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(-2);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

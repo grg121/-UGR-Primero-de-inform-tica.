@@ -1,0 +1,6 @@
+#! /bin/bash
+
+clear 
+clear 
+g++ -c $1.cpp -o obj/$1.o 
+g++ -o bin/$1 obj/$1.o 

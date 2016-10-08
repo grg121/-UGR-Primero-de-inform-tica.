@@ -1,0 +1,11 @@
+# Ejemplo de una función incompletamente especificada
+.i 4        # número de entradas 
+.o 1       # número de salidas 
+.ilb A B C D # nombre de las entradas 
+.ob Z       # nombre de la salida 
+0000 1 
+00-1 - 
+0101 1 
+1100 - 
+11-1 1 
+.e 

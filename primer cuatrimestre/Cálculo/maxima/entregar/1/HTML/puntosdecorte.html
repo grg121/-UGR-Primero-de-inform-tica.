@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>puntosdecorte</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i11) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1 ",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(-2,2,3,3,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;implicit(x^2-y^2=5,x,-6,2,y,-2,6));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_0.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+o bien:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i10) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;grid=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1 ",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;implicit((x+2)^2+(y-2)^2=9,x,-5,1,y,-1,5),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;implicit(x^2-y^2=5,x,-6,2,y,-2,6));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_1.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+buscamos los puntos de corte de:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i12) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+elipse:(x+2)^2+(y-2)^2=9;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_2.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+y
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i13) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+hiperbola: x^2-y^2=5;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_3.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+probamos con solve:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i15) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve([elipse,hiperbola], [x,y]);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_4.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+nos interesan las soluciones reales:<BR>
+[x=-2.436623445355914,y=-0.96805657156791],<BR>
+[x=-4.404220779220779,y=3.794358507734304].<BR>
+<BR>
+DIBUJAMOS LAS GRÁFICAS Y LOS PUNTOS DE CORTE:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i20) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1 ",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;line_width=1,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;implicit((x+2)^2+(y-2)^2=9,x,-5,1,y,-1,5),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;implicit(x^2-y^2=5,x,-6,2,y,-2,6),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;point_type=filled_circle,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([-2.436623445355914,-4.404220779220779],[-0.96805657156791,3.794358507734304]));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="puntosdecorte_img/puntosdecorte_5.png">
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

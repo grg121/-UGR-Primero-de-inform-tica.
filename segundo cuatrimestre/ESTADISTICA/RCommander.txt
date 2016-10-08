@@ -1,0 +1,223 @@
+
+> nombre <- c(Juan,Salvador,Luis,José,Lola,Daniel,David,Carlos,Agustín,Maite
+
+> nombre <- c(Juan,Salvador,Luis,José,Lola,Daniel,David,Carlos,Agustín,Maite)
+
+> nombre
+
+> nombre <- c("Juan","Salvador","Luis","José","Lola","Daniel","David","Carlos","Agustín","Maite")
+
+> nombre
+ [1] "Juan"     "Salvador" "Luis"     "José"     "Lola"     "Daniel"   "David"    "Carlos"   "Agustín"  "Maite"   
+
+> nombre[4]
+[1] "José"
+
+> edad <- c(20,21,20,19,19,18,20,18,19,19)
+
+> sexo <- c(H,H,H,H,M,H,H,H,H,M)
+
+> media <- c(6.3,9.1,5.2,3.1,5.8,8.6,2.2,6.3,9.3,9.5)
+
+> data <- data.frame(nombre, edad, sexo, media)
+
+> H <- "H"
+
+> M <- "M"
+
+> sexo <- c(H,H,H,H,M,H,H,H,H,M)
+
+> data <- data.frame(nombre,edad,sexo,media)
+
+> data
+     nombre edad sexo media
+1      Juan   20    H   6.3
+2  Salvador   21    H   9.1
+3      Luis   20    H   5.2
+4      José   19    H   3.1
+5      Lola   19    M   5.8
+6    Daniel   18    H   8.6
+7     David   20    H   2.2
+8    Carlos   18    H   6.3
+9   Agustín   19    H   9.3
+10    Maite   19    M   9.5
+
+> save("data",file="./data.RData")
+
+> names(data)
+[1] "nombre" "edad"   "sexo"   "media" 
+
+> data$altura <- c(1.75,1.80,1.77,1.75,1.71,1.64,1.69,1.95,1.75,1.67)
+
+> data
+     nombre edad sexo media altura
+1      Juan   20    H   6.3   1.75
+2  Salvador   21    H   9.1   1.80
+3      Luis   20    H   5.2   1.77
+4      José   19    H   3.1   1.75
+5      Lola   19    M   5.8   1.71
+6    Daniel   18    H   8.6   1.64
+7     David   20    H   2.2   1.69
+8    Carlos   18    H   6.3   1.95
+9   Agustín   19    H   9.3   1.75
+10    Maite   19    M   9.5   1.67
+
+> names(data)
+[1] "nombre" "edad"   "sexo"   "media"  "altura"
+
+> editDataset(data)
+
+> library(relimp, pos=14)
+
+> altos <- subset(data, subset=altura>1.70)
+
+> altos
+    nombre edad sexo media altura
+1     Juan   20    H   6.3   1.75
+2 Salvador   21    H   9.1   1.80
+3     Luis   20    H   5.2   1.77
+4     José   19    H   3.1   1.75
+5     Lola   19    M   5.8   1.71
+8   Carlos   18    H   6.3   1.95
+9  Agustín   19    H   9.3   1.75
+
+> row.names(altos) <- as.character(altos$nombre)
+
+> altos$nombre <- NULL
+
+> datos
+
+> data
+     nombre edad sexo media altura
+1      Juan   20    H   6.3   1.75
+2  Salvador   21    H   9.1   1.80
+3      Luis   20    H   5.2   1.77
+4      José   19    H   3.1   1.75
+5      Lola   19    M   5.8   1.71
+6    Daniel   18    H   8.6   1.64
+7     David   20    H   2.2   1.69
+8    Carlos   18    H   6.3   1.95
+9   Agustín   19    H   9.3   1.75
+10    Maite   19    M   9.5   1.67
+
+> altos
+         edad sexo media altura
+Juan       20    H   6.3   1.75
+Salvador   21    H   9.1   1.80
+Luis       20    H   5.2   1.77
+José       19    H   3.1   1.75
+Lola       19    M   5.8   1.71
+Carlos     18    H   6.3   1.95
+Agustín    19    H   9.3   1.75
+
+> data <- within(data, {
++   ESTADO <- Recode(media, '5:10 = "APROBADO"; 0:4.99 = "SUSPENSO"', as.factor.result=TRUE)
++ })
+
+> data
+     nombre edad sexo media altura   ESTADO
+1      Juan   20    H   6.3   1.75 APROBADO
+2  Salvador   21    H   9.1   1.80 APROBADO
+3      Luis   20    H   5.2   1.77 APROBADO
+4      José   19    H   3.1   1.75 SUSPENSO
+5      Lola   19    M   5.8   1.71 APROBADO
+6    Daniel   18    H   8.6   1.64 APROBADO
+7     David   20    H   2.2   1.69 SUSPENSO
+8    Carlos   18    H   6.3   1.95 APROBADO
+9   Agustín   19    H   9.3   1.75 APROBADO
+10    Maite   19    M   9.5   1.67 APROBADO
+
+> data$altura_cm <- with(data, altura*100)
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm
+1      Juan   20    H   6.3   1.75 APROBADO       175
+2  Salvador   21    H   9.1   1.80 APROBADO       180
+3      Luis   20    H   5.2   1.77 APROBADO       177
+4      José   19    H   3.1   1.75 SUSPENSO       175
+5      Lola   19    M   5.8   1.71 APROBADO       171
+6    Daniel   18    H   8.6   1.64 APROBADO       164
+7     David   20    H   2.2   1.69 SUSPENSO       169
+8    Carlos   18    H   6.3   1.95 APROBADO       195
+9   Agustín   19    H   9.3   1.75 APROBADO       175
+10    Maite   19    M   9.5   1.67 APROBADO       167
+
+> data$ObsNumber <- 1:10
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm ObsNumber
+1      Juan   20    H   6.3   1.75 APROBADO       175         1
+2  Salvador   21    H   9.1   1.80 APROBADO       180         2
+3      Luis   20    H   5.2   1.77 APROBADO       177         3
+4      José   19    H   3.1   1.75 SUSPENSO       175         4
+5      Lola   19    M   5.8   1.71 APROBADO       171         5
+6    Daniel   18    H   8.6   1.64 APROBADO       164         6
+7     David   20    H   2.2   1.69 SUSPENSO       169         7
+8    Carlos   18    H   6.3   1.95 APROBADO       195         8
+9   Agustín   19    H   9.3   1.75 APROBADO       175         9
+10    Maite   19    M   9.5   1.67 APROBADO       167        10
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=FALSE))
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm ObsNumber grupo
+1      Juan   20    H   6.3   1.75 APROBADO       175         1     2
+2  Salvador   21    H   9.1   1.80 APROBADO       180         2     2
+3      Luis   20    H   5.2   1.77 APROBADO       177         3     2
+4      José   19    H   3.1   1.75 SUSPENSO       175         4     1
+5      Lola   19    M   5.8   1.71 APROBADO       171         5     1
+6    Daniel   18    H   8.6   1.64 APROBADO       164         6     1
+7     David   20    H   2.2   1.69 SUSPENSO       169         7     2
+8    Carlos   18    H   6.3   1.95 APROBADO       195         8     1
+9   Agustín   19    H   9.3   1.75 APROBADO       175         9     1
+10    Maite   19    M   9.5   1.67 APROBADO       167        10     1
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c("joven","viejo"))
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('joven','viejo'))
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm ObsNumber grupo
+1      Juan   20    H   6.3   1.75 APROBADO       175         1     2
+2  Salvador   21    H   9.1   1.80 APROBADO       180         2     2
+3      Luis   20    H   5.2   1.77 APROBADO       177         3     2
+4      José   19    H   3.1   1.75 SUSPENSO       175         4     1
+5      Lola   19    M   5.8   1.71 APROBADO       171         5     1
+6    Daniel   18    H   8.6   1.64 APROBADO       164         6     1
+7     David   20    H   2.2   1.69 SUSPENSO       169         7     2
+8    Carlos   18    H   6.3   1.95 APROBADO       195         8     1
+9   Agustín   19    H   9.3   1.75 APROBADO       175         9     1
+10    Maite   19    M   9.5   1.67 APROBADO       167        10     1
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('joven','viejo')))
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('joven','viejo')))
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm ObsNumber grupo
+1      Juan   20    H   6.3   1.75 APROBADO       175         1 viejo
+2  Salvador   21    H   9.1   1.80 APROBADO       180         2 viejo
+3      Luis   20    H   5.2   1.77 APROBADO       177         3 viejo
+4      José   19    H   3.1   1.75 SUSPENSO       175         4 joven
+5      Lola   19    M   5.8   1.71 APROBADO       171         5 joven
+6    Daniel   18    H   8.6   1.64 APROBADO       164         6 joven
+7     David   20    H   2.2   1.69 SUSPENSO       169         7 viejo
+8    Carlos   18    H   6.3   1.95 APROBADO       195         8 joven
+9   Agustín   19    H   9.3   1.75 APROBADO       175         9 joven
+10    Maite   19    M   9.5   1.67 APROBADO       167        10 joven
+
+> data$grupo <- with(data, bin.var(edad, bins=2, method='intervals', labels=c('grupo A','grupo B')))
+
+> data
+     nombre edad sexo media altura   ESTADO altura_cm ObsNumber   grupo
+1      Juan   20    H   6.3   1.75 APROBADO       175         1 grupo B
+2  Salvador   21    H   9.1   1.80 APROBADO       180         2 grupo B
+3      Luis   20    H   5.2   1.77 APROBADO       177         3 grupo B
+4      José   19    H   3.1   1.75 SUSPENSO       175         4 grupo A
+5      Lola   19    M   5.8   1.71 APROBADO       171         5 grupo A
+6    Daniel   18    H   8.6   1.64 APROBADO       164         6 grupo A
+7     David   20    H   2.2   1.69 SUSPENSO       169         7 grupo B
+8    Carlos   18    H   6.3   1.95 APROBADO       195         8 grupo A
+9   Agustín   19    H   9.3   1.75 APROBADO       175         9 grupo A
+10    Maite   19    M   9.5   1.67 APROBADO       167        10 grupo A
+

@@ -1,0 +1,1066 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article-beamer
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Estadística.
+ 
+\end_layout
+
+\begin_layout Section
+Estadística descriptiva unidimensional.
+ 
+\end_layout
+
+\begin_layout Subsection
+Introducción.
+\end_layout
+
+\begin_layout Description
+Estadística: es el estudio de los métodos de recogida y descripción de datos
+ así como el análisis de estos.
+ 
+\end_layout
+
+\begin_layout Description
+Población: es un conjunto de elementos a los que se les estudia una característi
+ca.
+\end_layout
+
+\begin_layout Description
+Individuo: cada uno de los elementos de la población.
+ (N)
+\end_layout
+
+\begin_layout Description
+Muestra: es un subconjunto representativo del total de la población.
+ (n)
+\end_layout
+
+\begin_layout Description
+Variable estadística: es una característica propia del individuo objeto
+ del estudio estadístico.
+ Toda variable estadística presenta modalidades (cada una de las posibilidades
+ exhaustivas e incompatibles de la variable estadística).
+ Por ejemplo: La variable 
+\begin_inset Quotes eld
+\end_inset
+
+color de pelo
+\begin_inset Quotes erd
+\end_inset
+
+ tiene modalidades rubio, castaño, moreno...
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Según el tipo de modalidades que presenta la variable se puede clasificar
+ en:
+\end_layout
+
+\begin_layout Itemize
+Cualitativas: sus modalidades no pueden cuantificarse numéricamente (Ejemplo:
+ color de pelo).
+\end_layout
+
+\begin_layout Itemize
+Cuantitativas: sus modalidades pueden cuantificarse numéricamente; se divide
+ a su vez en: 
+\begin_inset Newline newline
+\end_inset
+
+-Discretas: toma modalidades numerables (Ejemplo: número de hermanos, número
+ de asignaturas cursando...
+ etc (números enteros).
+\begin_inset Newline newline
+\end_inset
+
+-Continuas: toman valores en intervalos (Ejemplo: altura, peso...).
+\end_layout
+
+\begin_layout Subsection
+Tablas estadísticas y representacions gráficas.
+ 
+\end_layout
+
+\begin_layout Standard
+Se utilizan para tabular los datos recogidos y constan de diversas columnas
+ que dependerán de si la variable es discreta o continua.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Casos discreto y cualitativo.
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ modalidades de la variable.
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $n_{i}$
+\end_inset
+
+ frecuencia absoluta de la modalidad 
+\begin_inset Formula $i$
+\end_inset
+
+, se verifica que: 
+\begin_inset Formula $\stackrel[i=1]{k}{\sum}=1n_{i}=N$
+\end_inset
+
+ (tamaño de la población).
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ frecuencia absoluta acumulada de la modalidad 
+\begin_inset Formula $i$
+\end_inset
+
+, de forma que 
+\begin_inset Formula $N_{i}=\stackrel[j=1]{i}{\sum}=n_{j}$
+\end_inset
+
+ ; además, 
+\begin_inset Formula $N_{k}=N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ frecuencia relativa, que se obtiene como: 
+\begin_inset Formula $f_{i}=\frac{n_{i}}{N}$
+\end_inset
+
+ ; cuantifica la proporción de individuos en cada modalidad.
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ frecuencia relativa acumulada, se obtiene como: 
+\begin_inset Formula $F_{i}=\stackrel[j=1]{i}{\sum}f_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los gráficos estadísticos más usuales para representar una variable discreta
+ son: diagrama de barras, diagrama de sectores, pictograma, diagrama de
+ tallos y hojas, diagrama de caja con bigotes y cartograma.
+\end_layout
+
+\begin_layout Subsubsection
+Caso continuo.
+\end_layout
+
+\begin_layout Standard
+Las columnas de la tabla de frecuencias son las mismas que las del caso
+ discreto, pero añadiendo también las siguientes:
+\end_layout
+
+\begin_layout Itemize
+(
+\begin_inset Formula $e_{i-1}-e_{i}]$
+\end_inset
+
+ Intervalo correspondiente a la modalidad 
+\begin_inset Formula $i$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ marcas de clase de cada intervalo.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ amplitud del intervalo.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $h_{i}$
+\end_inset
+
+ densidad de frecuencia del intervalo.
+ 
+\begin_inset Formula $h=\frac{n_{i}}{a_{i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los gráficos más comunes para casos continuos son el histograma, el polígono
+ de frecuencia, y la curva de distribución.
+ 
+\end_layout
+
+\begin_layout Subsection
+Características de una variable estadística.
+\end_layout
+
+\begin_layout Subsubsection
+Medidas de posición central.
+\end_layout
+
+\begin_layout Itemize
+Media aritmética: es la medida de síntesis más utilizada.
+ Se obtiene como: 
+\begin_inset Formula $\bar{X}=\frac{1}{N}\stackrel[i=1]{k}{\sum}n_{i}x_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Moda: es el valor más frecuente de la distribución: 
+\begin_inset Newline newline
+\end_inset
+
+-Caso continuo: es el valor 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ con mayor 
+\begin_inset Formula $n_{i}.$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+-Caso discreto: Existe un 
+\begin_inset Quotes eld
+\end_inset
+
+intervalo modal
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $I_{mo}$
+\end_inset
+
+ que es aquél cuya densidad de frecuencia (
+\begin_inset Formula $h_{i})$
+\end_inset
+
+ es mayor.
+ 
+\begin_inset Formula 
+\[
+Mo=e_{i-1}+\frac{(h_{i}-h_{i-1})}{(h_{i}-h_{i-1})+(h_{i}+h_{i+1)}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mediana: se utiliza sobretodo en los casos donde aparecen muchos valores
+ anómalos, ya que divide la distribución en dos partes iguales suponiendo
+ que los datos están ordenados.
+ Por ejemplo: 1,2,2,
+\series bold
+3
+\series default
+,4,4,8 - en este caso el 3 es la mediana, pues divide en dos los resultados
+ ordenados.
+ Si el número de resultados es par, la mediana es un conjunto de dos números:
+ en 1,2,
+\series bold
+2,3
+\series default
+,4,12 - la mediana sería {2,3} 
+\begin_inset Newline newline
+\end_inset
+
+La mediana es interesante porque al añadir nuevos valores que son muy diferentes
+ al resto, esta permanece casi inalterable, mientras que la media aritmética
+ varía considerablemente.
+ Por ejemplo, si tenemos los datos del peso de una población cuya media
+ es de 70kg y añadimos dos individuos que pesan 120kg, la media pasa a ser
+ 103kg aproximadamente, mientras que la mediana, apenas varía.
+ Ejemplo: si tenemos: 65,60,62,62,63,65,70,
+\series bold
+70,70
+\series default
+,71,71,71,72,73,75,77.
+ Y añadimos dos personas de 120kg, tenemos que: 65,60,62,62,63,65,70,70,
+\series bold
+70,71
+\series default
+,71,71,72,73,75,77,120,120.
+ La mediana pasa a ser 70-71, es decir, casi no varía.
+ 
+\begin_inset Newline newline
+\end_inset
+
+-Caso discreto: la mediana es el valor 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ cuyo 
+\begin_inset Formula $N_{i}>\frac{N}{2}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+-Caso continuo: el intervalo mediano 
+\begin_inset Formula $I_{me}$
+\end_inset
+
+es aquél cuya 
+\begin_inset Formula $N_{i}>\frac{N}{2}$
+\end_inset
+
+ ; entonces 
+\begin_inset Formula $Me=e_{i-1}+\frac{\frac{N}{2}-N_{i-1}}{n_{i}}a_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cuantiles.
+ 
+\end_layout
+
+\begin_layout Standard
+Un cuantil de orden 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, 
+\begin_inset Formula $C_{\alpha}$
+\end_inset
+
+, es el valor de la variable que deja a la izquierda un 
+\begin_inset Formula $\alpha\%$
+\end_inset
+
+ de la población.
+ Por tanto, los cuantiles permiten dividir la población en partes iguales.
+ Dependiendo del número de divisores se clasifican en: 
+\end_layout
+
+\begin_layout Enumerate
+Cuartiles.
+ Dividen la población en cuatro partes iguales.
+ 
+\begin_inset Formula $Q_{1},Q_{2},Q_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Deciles.
+ dividen a la población en 10 partes iguales.
+ 
+\begin_inset Formula $D_{1},D_{2},...,D_{9}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Percentiles.
+ Dividen a la población en 100 partes iguales.
+ 
+\begin_inset Formula $P_{1},P_{2},....P_{99}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+*Nota: el cuartil 
+\begin_inset Formula $Q_{2},$
+\end_inset
+
+ el decil 
+\begin_inset Formula $D_{5},$
+\end_inset
+
+ y el percentil 
+\begin_inset Formula $P_{50},$
+\end_inset
+
+ son la mediana.
+ 
+\end_layout
+
+\begin_layout Proposition
+Cálculo de un cuantil.
+ 
+\end_layout
+
+\begin_layout Itemize
+Caso discreto.
+ El 
+\begin_inset Formula $C_{\alpha}$
+\end_inset
+
+será aquél valor 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ cuyo 
+\begin_inset Formula $N_{i}>\frac{N_{\alpha}}{100}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Caso continuo.
+ El intervalo que contiene al cuantil es aquel cuyo 
+\begin_inset Formula $N_{i}>\frac{n_{\alpha}}{100}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+En este caso, el cuantil sería: 
+\begin_inset Formula $C_{\alpha}=e_{i-1}+\frac{\frac{N_{\alpha}}{100}-1}{n_{i}}a_{i}$
+\end_inset
+
+ (Cuando 
+\begin_inset Formula $\alpha=50$
+\end_inset
+
+ se obtiene la fórmula de la mediana).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Medidas de dispersión.
+ 
+\end_layout
+
+\begin_layout Standard
+Estas medidas nos ofrecen un indicador de la homogeneidad de una variable.
+ Cuanto mayor sean, menos homogénea es la variable y, por tanto, la media
+ será menos representativa.
+\end_layout
+
+\begin_layout Enumerate
+Rango.
+ ValorMáximo - ValorMínimo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Rango Intercuartídico (RIQ).
+ 
+\begin_inset Formula $Q_{3}-Q_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Varianza.
+ Es la medida de dispersión más utilizada.
+ Sin embargo, presenta el inconveniente de depender de las unidades en que
+ está medida la variable (Ya que el resultado se obtiene en dicha unidad
+ elevada al cuadrado).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+V(X)=\frac{1}{N}\stackrel[i=1]{k}{\sum}n_{i}(x_{1}-\overline{x})^{2}=[\frac{1}{N}\stackrel[i=1]{k}{\sum}n_{i}\bar{x}\text{² }]-\bar{x}\text{² }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Desviación típica.
+ 
+\begin_inset Formula $\sigma_{x}=\sqrt{v(x)}$
+\end_inset
+
+ (se utiliza para quitar el cuadrado de la unidad obtenido en la varianza).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Coeficiente de variación.
+ Es una medida adimensional, por lo que se utiliza para comparar distintas
+ variables.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+CV_{x}=\frac{\sigma_{x}}{\bar{x}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ejercicios.
+ 
+\end_layout
+
+\begin_layout Exercise
+Disponemos de 50 datos relativos a un estudio sobre el número de días que
+ han faltado al trabajo los empleados de Microsoft en el transcurso de un
+ mes.
+ Los datos recogidos son:
+\end_layout
+
+\begin_layout Exercise
+0,0,1,4,3,2,0,1,2,0,1,0,0,0,2,1,1,1,0,5,2,0,1,1,0,0,2,0,0,0,1,0,0,3,4,0,3,1,0,0,
+0,0,1,0,0,1,2,2,1,0.
+ 
+\end_layout
+
+\begin_layout Exercise
+a) Obtenga la distribución de frecuencias del número de días que han faltado
+ al trabajo.
+\end_layout
+
+\begin_layout Exercise
+b) Calcule las frecuencias absolutas y relativas con o sin acumular.
+ 
+\end_layout
+
+\begin_layout Exercise
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $n_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $N_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.48
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.74
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.86
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.94
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Exercise
+N= 50 
+\end_layout
+
+\begin_layout Exercise
+
+\end_layout
+
+\begin_layout Exercise
+c) ¿Qué proporción de individuos han faltado 2 días al trabajo? 
+\end_layout
+
+\begin_layout Exercise
+Como para 
+\begin_inset Formula $x_{i}=2$
+\end_inset
+
+ 
+\begin_inset Formula $f_{i}=0.14$
+\end_inset
+
+ ; la proporción es del 14%
+\end_layout
+
+\begin_layout Exercise
+d) ¿Cuántos individuos han faltado menos de 4 días? ¿Qué proporción representan?
+ 
+\end_layout
+
+\begin_layout Exercise
+ 47 (frecuencia absoluta acumulada en 
+\begin_inset Formula $X_{i}=3$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Exercise
+e) Diagrama de barras.
+\end_layout
+
+\begin_layout Exercise
+f) Media: 
+\end_layout
+
+\begin_layout Exercise
+g) Mediana: 
+\end_layout
+
+\begin_layout Exercise
+h) Moda: 
+\end_layout
+
+\end_body
+\end_document

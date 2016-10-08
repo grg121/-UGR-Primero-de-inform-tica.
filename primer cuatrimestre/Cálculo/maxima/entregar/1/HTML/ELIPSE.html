@@ -1,0 +1,441 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>ELIPSE</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Dibuja la elipse centrada en (-1,2) de semiejes 2y3 y los rectángulos de área sqrt(15) inscritos en ella.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i3) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+load(draw)$
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i2) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(-1,2,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([-1],[2])<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_0.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+esta es la elipse que nos piden. Un ejemplo de rectángulo inscrito en ella se podría obtener mediante...
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i4) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+elipse: ((x+1)^2)/9 + ((y-2)^2)/4 = 1;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_1.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i5) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve(elipse,y);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_2.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i6) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+top(x):=(2*sqrt(-x^2-2*x+8)+6)/3;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_3.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i7) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+bot(x):=-(2*sqrt(-x^2-2*x+8)-6)/3;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_4.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i15) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+top(0.0);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_5.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i16) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+bot(-2.0);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_6.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+hemos todamos dos valores de x (0 y -2) que distan una unidad del centro y tomado el valor que toma la elipse en esos puntos. El que está a la derecha se ha tomado con la parte<BR>
+superior de la elipse, y el de la izquierda, con la inferior. Así obtenemos esquinas superior derecha e inferior izquierda.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i18) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(-1,2,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([-1],[2]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle([0,3.885618083164126],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-2,0.11438191683587])<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_7.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Desplazando esta gráfica al centro de coordenadas:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i28) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(0,0,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([0],[0]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1,1.885618083164126],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-1,0.11438191683587-2])<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_8.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+siendo las coordenadas del vertice superior (x,y) y del inferior (-x,-y).<BR>
+El área del rectángulo queda A = 2*x*2*y = 4*x*y
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i25) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+area: 4*x*y = sqrt(15);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_9.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i26) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+elipse: x^2/9 + y^2/4 = 1;
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_10.png">
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i29) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+solve([area, elipse], [x,y]);
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_11.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Los resultados obtenidos son los vértices de los distintos rectángulos que se pueden sacar.
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i34) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(0,0,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([0],[0]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;point_type=filled_circle,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2),(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2), -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]]));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_12.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Con estos puntos, dibujamos el rectángulo:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i36) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(0,0,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([0],[0]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle([-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2),(-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle([-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2),(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2), -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_13.png">
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Ahora, para dibujar la elipse y los rectángulos que nos piden, solo tenemos que transladar todos los puntos una unidad a la izquierda y dos hacia arriba:
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+(%i40) 
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+wxdraw2d(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;user_preamble="set size ratio 1",<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=black,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;ellipse(-1,2,3,2,0,360),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=red,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;points([-1],[2]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;color=blue,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;transparent=true,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle([-(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2)  -1, 2 + (sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(12-sqrt(129)))/2^(3/2) -1, 2 + (-sqrt(12-sqrt(3)*sqrt(43))*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)+3*2^(5/2)*sqrt(5)))/30]),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;rectangle([-(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2)  -1, 2 +(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[(sqrt(3)*sqrt(sqrt(129)+12))/2^(3/2) -1, 2 -(sqrt(sqrt(3)*sqrt(43)+12)*(sqrt(2)*sqrt(3)*sqrt(5)*sqrt(43)-3*2^(5/2)*sqrt(5)))/30]));
+  </SPAN></TD>
+</TR></TABLE>
+  <BR>
+  <IMG ALT="Result" SRC="ELIPSE_img/ELIPSE_14.png">
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

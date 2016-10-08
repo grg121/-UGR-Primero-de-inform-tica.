@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <TITLE>FranciscoNavarroMorales</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <STYLE TYPE="text/css">
+body {
+  background-color: rgb(255,255,255);
+}
+.input {
+  color: rgb(0,0,255);
+}
+.comment {
+  color: rgb(0,0,0);
+  background-color: rgb(255,255,255);
+  padding: 2mm;
+}
+.image {
+  color: rgb(0,0,0);
+  padding: 2mm;
+}
+.section {
+  color: rgb(0,0,0);
+  font-size: 1.5em;
+  padding: 2mm;
+}
+.subsect {
+  color: rgb(0,0,0);
+  font-size: 1.2em;
+  padding: 2mm;
+}
+.title {
+  color: rgb(0,0,0);
+  font-size: 2em;
+  padding: 2mm;
+}
+.prompt {
+  color: rgb(255,0,0);
+}
+table {
+  border: 0px;
+}
+td {
+  vertical-align: top;
+  padding: 1mm;
+}
+  </STYLE>
+ </HEAD>
+ <BODY>
+
+<!---------------------------------------------------------->
+<!--          Created with wxMaxima version 14.12.1         -->
+<!---------------------------------------------------------->
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+Ejercicio 5.10
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Ejercicio 5.10. En el método de bisección siempre se elige el punto medio del intervalo como<BR>
+pivote para dividir el intervalo en dos partes iguales. Escribe un programa que elija como pivote<BR>
+un número aleatorio del intervalo. Compara los resultados que se obtienen para la función <BR>
+f (x) =x^3 − 5 en el intervalo [−10, 10].
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+biseccion(expr,var,ext_inf,ext_sup):=<BR>
+block(<BR>
+numer:true,<BR>
+[a,b,c,k,err:10^(-8),prec:10^(-9)],<BR>
+/* extremos del intervalo */<BR>
+a:ext_inf,<BR>
+b:ext_sup,<BR>
+/* ¿número de pasos? */<BR>
+<BR>
+/* Siempre ocurre que error < [b-a] <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;En cada división, el error cometido se disminuye en función de lo cerca<BR>
+&nbsp;&nbsp;&nbsp;que esté el punto medio elegido al azar de la respuesta.<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;Esto hace imposible establecer un número de pasos exacto. */<BR>
+<BR>
+local(f),<BR>
+define(f(x),subst(x,var,expr)),<BR>
+<BR>
+<BR>
+/* comprobamos las condiciones iniciales */<BR>
+if f(a)*f(b)>0 then error("Error: no hay cambio de signo"),<BR>
+<BR>
+/* ¿se alcanza la solución en los extremos? */<BR>
+if abs(f(a)) < prec then return(a),<BR>
+if abs(f(b)) < prec then return(b),<BR>
+<BR>
+/* Definimos el error máximo a cometer en la siguiente selección de c. */<BR>
+<BR>
+emax: abs(b-a),<BR>
+<BR>
+while (emax > err) do<BR>
+(<BR>
+aleatorio: random(emax+0.0),<BR>
+/* además del error maximo, emax es la distancia entre a y b<BR>
+random calculará un número entre 0 y la distancia entre a y b<BR>
+y le sumara el menor de ambos. Ese valor será c.<BR>
+IMPORTANTE: si no se pone  0.0 random da numeros enteros y llega un punto en el que siempre da 1 o 0<BR>
+de esta forma se consiguen numeros con decimales y el programa funciona correctamente. */<BR>
+<BR>
+if a<b then<BR>
+c:aleatorio+a<BR>
+else<BR>
+c:aleatorio+b,<BR>
+if abs(f(c))< prec then return (c),<BR>
+if f(a)*f(c)< 0 then b:c else a:c,<BR>
+emax: abs(b-a)<BR>
+),<BR>
+c<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+biseccion(x^3-5,x,-10,10);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+realroots(x^3-5);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Tenemos los ocho decimales correctos que búscabamos.
+</P>
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+Ejercicio 5.14<BR>
+
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+El método de regula falsi o de la falsa posición es muy parecido al método de bisección. La única diferencia es que se cambia el punto medio por el punto<BR>
+de corte del segmento que une los puntos (a, f (a)) y (b, f (b)) con el eje de abscisas.<BR>
+Escribe un programa que utilice este método. Para la función f (x) = x^2 − 5 en el intervalo [0, 4], comparalos resultados obtenidos. ¿Cuál es mejor?
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Nota: sea m la pendiente del segmento...<BR>
+<BR>
+m = variacion de y / variacion de x = (Y-Yo) / (X-Xo) ---> Y-Yo = m (X-XO)<BR>
+<BR>
+Y = Yo + m(X-Xo)<BR>
+<BR>
+donde m = f(b)-f(a) / b-a<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yo = f(b)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xo = b<BR>
+<BR>
+entonces Y= f(b) + f(b)-f(a)/b-a (x-b)<BR>
+si igualamos a cero y despejamos x:<BR>
+<BR>
+X = b - f(b)(b-a)/f(b)-f(a)
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+regulafalsi(expr,var,ext_inf,ext_sup):=<BR>
+block(<BR>
+numer:true,<BR>
+[a,b,c,k,err:10^(-8),prec:10^(-9)],<BR>
+/* extremos del intervalo */<BR>
+a:ext_inf,<BR>
+b:ext_sup,<BR>
+<BR>
+/* ¿número de pasos? */<BR>
+<BR>
+/* El error nunca es mayor que b-a <BR>
+&nbsp;&nbsp;&nbsp;&nbsp;La variación del error depende de la forma que tenga la función<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;--> no hay un número fijo de pasos, usamos un bucle while. */<BR>
+<BR>
+local(f),<BR>
+define(f(x),subst(x,var,expr)),<BR>
+<BR>
+<BR>
+/* comprobamos las condiciones iniciales */<BR>
+if f(a)*f(b)>0 then error("Error: no hay cambio de signo"),<BR>
+<BR>
+/* ¿se alcanza la solución en los extremos? */<BR>
+if abs(f(a)) < prec then return(a),<BR>
+if abs(f(b)) < prec then return(b),<BR>
+<BR>
+/* Definimos el error máximo a cometer en la siguiente selección de c. */<BR>
+<BR>
+emax: b-a,<BR>
+<BR>
+while (emax > err) do<BR>
+(<BR>
+c: b-(f(b)*(b-a))/(f(b)-f(a)),<BR>
+<BR>
+if abs(f(c))< prec then return (c),<BR>
+if f(a)*f(c)< 0 then b:c else a:c,<BR>
+emax: b-a<BR>
+),<BR>
+c<BR>
+);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+regulafalsi(x^2-5,x,0,4);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+realroots(x^2-5);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+biseccion(x^2-5,x,0,4);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Las dos funciones, bisección y regulafalsi, obtienen resultados con un error máximo menor que el que nos piden, por lo que ambas son correctas.<BR>
+Ahora bien, ¿cuál es mejor o más rápida? Verdaderamente, las operaciones que realiza regulafalsi para calcular c son más complejas que las de bisección y,<BR>
+si bien es cierto que en algunos casos puede encontrar la solución mucho más deprisa, existen casos (dependiendo de la curvatura de la función) en los que <BR>
+el número de pasos es mucho mayor. El método de bisección divide siempre el error máximo cometido entre dos. El regula falsi, en algunos casos, no disminuye ni a la mitad<BR>
+el error cometido, y necesita dar más pasos.<BR>
+En conclusión, ninguno es necesariamente mejor o peor, aunque el regula falsi puede dar resultados muy buenos en algunas ocasiones, la bisección es un método más seguro<BR>
+pues da buenos resultados siempre.
+</P>
+
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+Ejercicio 5.16
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+El método de la secante evita calcular la derivada<BR>
+de una función utilizando recta secantes. Partiendo<BR>
+de dos puntos iniciales x 0 y x 1 , el siguiente es el<BR>
+punto de corte de la recta que pasa por (x 0 , f (x 0 )) y<BR>
+(x 1 , f (x 1 )) y el eje de abscisas. Se repite el proceso ahora con x1 y x2 y así sustantivamente.<BR>
+Escribe un programa que utilice este método. Para la función f (x) = x^2−5, compara los resultados<BR>
+obtenidos con el método de Newton-Raphson. ¿Cuál es mejor?
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+secante(expr,var,ini0,ini1):=block(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;[x0:ini0,x1:ini1,j,prec:10^(-10)],<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;local(f),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;define(f(x),subst(x,var,expr)),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;for i:1 thru 15 do(<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j:i,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ult: x0,<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x0: x1-(f(x1)*(x1-x0))/(f(x1)-f(x0)),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if abs(x0-ult)<prec then return()<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;),<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;if j=15 then error("elige otro valor inicial") else x0<BR>
+);<BR>
+nr(x^3-5,x,12.0);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+secante(x^2-5,x,2.5,3);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+realroots(x^2-5);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+load(mnewton);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Code cell -->
+
+
+<P><TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+-->  
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+mnewton(x^2-5,x,3);
+  </SPAN></TD>
+</TR></TABLE>
+
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Como en el caso anterior, cada método tiene sus pros y sus contras. Este método es más fácil de implementar y obtiene resultados bastante similares así<BR>
+que supongo que en muchos casos combiene utilizarlo. Sin embargo, Newton-Raphson quizá aporte mayor exactitud y obtenga los resultados en menos pasos.
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="http://wxmaxima.sourceforge.net/">wxMaxima</A>.</SMALL>
+
+ </BODY>
+</HTML>

@@ -1,0 +1,492 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass paper
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+PRÁCTICA 2: MEDIDAS EN CORRIENTE ALTERNA
+\end_layout
+
+\begin_layout Author
+Por Francisco Navarro y Luis Sola.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Introducción.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Objetivo: observar cómo se modifica la tensión de la señal de salida al
+ medir la tensión entre dos puntos del circuito cuando se modifica la señal
+ de entrada.
+ La intención es realizar un filtro paso bajo con un circuito compuesto
+ por una fuente de corriente alterna, una resistencia y un condensador.
+\end_layout
+
+\begin_layout Standard
+En esta práctica hemos realizado un circuito RC (utilizando una resistencia
+ y un condensador) con la intención de construir un filtro de paso bajo
+ que cumpla lo siguiente:
+\end_layout
+
+\begin_layout Itemize
+A bajas frecuencias, la amplitud de salida es muy similar a la de entrada.
+ El diagrama de Bode vale en torno a 0dB.
+\end_layout
+
+\begin_layout Itemize
+Cuando la frecuencia es igual a la frecuencia de corte, la atenuación es
+ de -3dB.
+\end_layout
+
+\begin_layout Itemize
+Una vez se supera la frecuencia de corte, la amplitud de salida se atenúa
+ cada vez más, con una pendiente de 20dB/década.
+\end_layout
+
+\begin_layout Part*
+Proceso experimental.
+\end_layout
+
+\begin_layout Standard
+M
+\end_layout
+
+\begin_layout Standard
+Filtro paso bajo:
+\end_layout
+
+\begin_layout Standard
+En primer lugar, medimos los valores de la resistencia y el condensador
+ que vamos a utilizar.
+ Los resultados obtenidos son:
+\end_layout
+
+\begin_layout Standard
+Resistencia: 
+\begin_inset Formula $0.98k\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Condensador: 
+\begin_inset Formula $10.02nF.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con estos datos podemos calcular la frecuencia de corte teórica del filtro.
+ 
+\end_layout
+
+\begin_layout Standard
+La frecuencia de corte sería:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Fc=\frac{1}{2\pi RC}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sustituyendo los valores (R y C) de la resistencia y el condensador, obtenemos
+ una frecuencia de corte teórica:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Fc=16.207'8845Hz.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+A continuación, montamos en el zócalo el circuito ya mencionado.
+ La fuente será un generador de señal con forma de onda sinusoidal sin ''offset'
+' con amplitud pico a pico de 10V.
+\end_layout
+
+\begin_layout Standard
+Medimos las amplitudes pico a pico de la entrada Vi(t)(Vipp) y de la señal
+ de salida Vo(t)(Vopp) y la frecuencia de la señal de entrada.
+ Los datos obtenidos son los que se muestran en el Cuadro 1.
+ 
+\end_layout
+
+\begin_layout Standard
+En teoría, la frecuencia de corte es de 
+\begin_inset Formula $Fc=16207.88454640671Hz.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Experimentalmente, podemos encontrar la frecuencia de corte buscando la
+ frecuencia a la que se cumpla que Vo=0.7Vi.
+ Según los datos recogidos este valor está entre 16000 y 16200, que es más
+ o menos lo que calculamos de forma teórica.
+\end_layout
+
+\begin_layout Part*
+\begin_inset Newpage newpage
+\end_inset
+
+Fundamento teórico.
+\end_layout
+
+\begin_layout Standard
+La función de transferencia, T, se calcula como 
+\begin_inset Formula $T=\frac{V_{o}}{V_{i}}$
+\end_inset
+
+ considerando que Vo y Vi se toman en los extremos de la resistencia (Vi
+ ente la fuente y la resistencia y Vo entre el condensador y la resistencia)
+ .
+ Suponiendo que entre la fuente de tensión y el condensador hay una tensión
+ conocida (la suponemos 0, tierra), tenemos que:
+\end_layout
+
+\begin_layout Standard
+Entonces: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{i}=(\frac{1}{jwC}+R)i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{o}=\frac{i}{jwC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Entonces 
+\begin_inset Formula $T=\frac{i}{jwC(\frac{1}{jwC}+R)i}=\frac{1}{1+1+jwCR}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si trabajamos con números complejos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T=\frac{|V_{o}|e^{jargV_{o}}}{|Vi|e^{jarguV_{i}}}=\frac{|V_{o}|}{|Vi|}=e^{j(argV_{o}-argV_{i}}=|T|e^{jarguT}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+entonces tenemos que el módulo de la función de transferencia es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $|T|=\frac{1}{\sqrt{1+-(CRw)^{2}}}=\frac{1}{\sqrt{1+9,64*10^{-11}w}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Conociendo esto, podemos establecer un modelo de los resultados aproximados
+ del módulo de la función de transferencia en función de si la frecuencia
+ angular, w, es muy grande o muy pequeña.
+\end_layout
+
+\begin_layout Standard
+Cuanto más grande es w, más pequeño se hace el módulo de T, por ejemplo,
+ si probamos con la frecuencia de corte teórica, 16207.88, obtenemos un módulo
+ de 0,98...
+\end_layout
+
+\begin_layout Standard
+A medida que tomamos valores más grandes, por ejemplo 1620700, obtenemos
+ módulos más pequeños (0.0627)
+\end_layout
+
+\begin_layout Standard
+Por otro lado, si tomamos valores de w muy pequeños, la ecuación queda:
+ 
+\begin_inset Formula $|T|=\frac{1}{\sqrt{1}}=1$
+\end_inset
+
+porque el producto de 
+\begin_inset Formula $(CRw)^{2}$
+\end_inset
+
+es despreciable.
+\end_layout
+
+\begin_layout Standard
+Esto demuestra que estamos ante un filtro paso bajo porque deja pasar las
+ frecuencias pequeñas (módulo de T = 1) y atenúa las altas (módulo de T
+ tiende a 0).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagengif
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito RC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+\begin_inset Newpage newpage
+\end_inset
+
+Datos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename imagenn.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El diagrama de Bode obtenido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename jpg.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos aproximar la frecuencia de corte sobre el diagrama en torno a los
+ 10.000Hz, lo que, teniendo en cuenta que se trata de una escala logaritmica,
+ se puede aproximar a los 16.000 teóricos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Discusión de los resultados.
+\end_layout
+
+\begin_layout Standard
+A lo largo de la práctica en torno al desarrollo del diagrama de Bode, hemos
+ podido observar como funcionan los filtros de frecuencia; en este caso,
+ se trata de un filtro paso bajo que, como ya hemos comentado, deja pasar
+ las frecuencias bajas (por debajo de un valor determinado frecuencia de
+ corte) y atenúa las frecuencias altas.
+\end_layout
+
+\begin_layout Standard
+Este fenómeno se fundamenta en el estudio de la función de transferencia
+ de cada circuito.
+ En este caso, con un circuito RC y tomando los valores 
+\begin_inset Formula $V_{O}$
+\end_inset
+
+y 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ entre los extremos de la resistencia.
+ 
+\end_layout
+
+\begin_layout Standard
+Para cada función de transferencia, puede establecerse un 
+\begin_inset Quotes fld
+\end_inset
+
+modelo
+\begin_inset Quotes frd
+\end_inset
+
+ de resultados del módulo de la función de transferencia para valores muy
+ grandes o muy pequeños de w.
+ En este caso, hemos comprobado que para valores muy grandes, el módulo
+ tendía a 0, mientras que para valores muy pequeños el módulo tiende a 1.
+ Otro ejemplo visto en clase de filtros de este tipo (con un circuito RB)
+ produce un filtro de paso alto, ya que para valores muy bajos el módulo
+ tiende a 0 mientras que para valores muy altos tiende a 0; justo lo contrario
+ que en nuestro caso.
+\end_layout
+
+\begin_layout Standard
+Por consiguiente podemos llegar a la conclusión de que todo circuito es
+ susceptible de ser un filtro de determinadas frecuencias.
+ Comprobando con la función de transferencia como reacciona la frecuencia
+ introducida en un elemento del circuito al pasar por dicho elemento (ya
+ sea una resistencia, un condensador, una bobina etc...).
+ Podemos determinar la existencia de filtros muy concretos como son el filtro
+ paso bajo y el filtro paso alto y preveer la existencia de filtros menos
+ exactos que dejen pasar no ya, frecuencias altas o bajas sino determinadas
+ bandas de frecuencia o frecuencias muy concretas.
+ Esto significa que la función de transferencia tiene una gran importancia
+ a la hora de separar frecuencias que puede utilizarse, por ejemplo, en
+ fotografía donde un filtro de paso bajo puede servir para detener la informació
+n de la imagen en alta frecuencia y reducir los efectos de Moaré y falsos
+ colores causados por las ondas de alta frecuencia.
+ Otro ejemplo típico es la manipulación de sonido, donde estos filtros pueden
+ servir para eliminar agudos o graves de un sonido, ruidos etc...
+\end_layout
+
+\begin_layout Standard
+En conclusión, consideramos que el principal uso que se le podría dar a
+ la función de transferencia es la facilidad que ofrece para establecer
+ determinados filtros y conocer cómo influye cada elemento en la señal (de
+ corriente alterna) que le llega.
+ Esto es muy interesante porque las posibilidades son muy variadas y el
+ concepto es relativamente sencillo de aplicar.
+\end_layout
+
+\begin_layout Standard
+Los datos que hemos obtenido se ajustan perfectamente a lo que cabría de
+ esperar, por lo que podemos llegar a la conclusión de que los hemos recogido
+ adecuadamente y que los cálculos teóricos son correctos.
+ 
+\end_layout
+
+\end_body
+\end_document

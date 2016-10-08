@@ -1,0 +1,18 @@
+
+  class Polinomio{
+    private:
+      float *coef;
+      int grado ;
+      int max_grado ;
+
+  public:
+      Polinomio() ;
+      Polinomio(const Polinomio original) ;
+      ~Polinomio();
+
+      void AsignarCoeficiente(int i, float c) ;
+      int Grado() const ;
+      float Coeficiente(int i) const ;
+
+
+  }

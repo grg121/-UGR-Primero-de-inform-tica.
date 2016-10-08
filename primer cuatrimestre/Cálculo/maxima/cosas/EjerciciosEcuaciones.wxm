@@ -1,0 +1,133 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 14.12.1 ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 4.1. Calcula los puntos donde se cortan las parábolas y = x 2 , y = 2x 2 + ax + b. Discute
+todos los casos posibles dependiendo de los valores de a y b.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(x^2+a*x+b,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+#el sistema tiene solución sólo si a^2-4b es mayor o igual que cero; es decir, si: a >= 2 raiz(b)
+#si a=0:
+
+
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(x^2+b,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+la ecuación solo tiene una solución única (si b<0)
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+#si b=0
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(x^2+a*x,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+#si a=b=w
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(x^2+w*x+w,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+#solo tendrá solución si w^2-4w > 0 es decir, si w está en el intervalo: (-inf,0]U[4,+inf)
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 4.2. Dibuja, en un mismo gráfico, la elipse de semieje horizontal a = 3 y de semieje
+vertical b = 5 y la bisectriz del primer cuadrante. Calcula los puntos donde se cortan ambas curvas.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    fill_color=khaki,
+    ellipse(0,0,3,5,0,360),
+    explicit(x,x,0,3)
+);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= sqrt(25*(1-(x^2/9)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+to_poly_solve([x=sqrt(25*(1-(x^2/9)))], [x]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+#que es aproximadamente el punto [2.57,2,57]...
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    explicit(f,x,-3,3),
+    explicit(x,x,-3,3),
+    point_type=filled_circle,
+    point_size=2,
+    color=red,
+    points([2.57],[2.57]));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Ejercicio 4.3.
+a) Comprueba que los puntos A = −sqrt(7), −1 y B = sqrt(7),1 pertenecen a las graficas de las
+dos curvas siguientes: la circunferencia de centro (0, 0) y radio sqrt(8) y la hipérbola de ecuación
+x^2 − y^2 = 6.
+b) Dibuja, en un mismo gráfico, las dos curvas anteriores, así como los puntos A y B y el centro de
+la circunferencia dada. Utiliza opciones de color y grosor de línea para diferenciar los distintos
+objetos representados.
+c) En el gráfico anterior, dibuja también la recta que une los puntos representados.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: title   start ]
+(EXAMEN)
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    color=green,
+    line_width=2,
+    implicit(x^2+y^2=8,x,-4,4,y,-3,3),
+    color=red,
+    line_width=1,
+    implicit(x^2-y^2=6,x,-4,4,y,-3,3),
+    color=blue,
+    point_type=circle,
+    point_size=3,
+    points([-sqrt(7),sqrt(7),0],[-1,1,0]),
+    color=orange,
+    explicit((1/sqrt(7))*x,x,-4,4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(6+x^2=8-x^2,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: comment start ]
+Consideremos la circunferencia de centro (0, 0) y radio 2. Dibújala. Ahora conside-
+remos un rectángulo centrado en el origen e inscrito en ella. Determina el rectángulo así construido
+cuya área sea 1.
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+wxdraw2d(
+    user_preamble="set size ratio 1",
+    implicit(x^2+y^2=4,x,-2.3,2.3,y,-2.3,2.3),
+    fill_color=khaki
+);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

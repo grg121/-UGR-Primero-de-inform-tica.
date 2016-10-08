@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2015-12-18"/>
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all"/>
+<title>PRÁCTICA 2: MEDIDAS EN CORRIENTE ALTERNA</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+PRÁCTICA 2: MEDIDAS EN CORRIENTE ALTERNA
+</h1>
+<h2 class="author">
+Por Francisco Navarro y Luis Sola.
+</h2>
+<div class="Unindented">
+Objetivo: observar cómo se modifica la tensión de la señal de salida al medir la tensión entre dos puntos del circuito cuando se modifica la señal de entrada. La intención es realizar un filtro paso bajo con un circuito compuesto por una fuente de corriente alterna, una resistencia y un condensador.
+</div>
+<h1 class="Part-">
+<a class="toc" name="toc-Part--I"></a>Proceso experimental.
+</h1>
+<div class="Unindented">
+Filtro paso bajo:
+</div>
+<div class="Indented">
+En primer lugar, medimos los valores de la resistencia y el condensador que vamos a utilizar. Los resultados obtenidos son:
+</div>
+<div class="Indented">
+Resistencia: <span class="formula">0.98<i>k</i>Ω</span>
+</div>
+<div class="Indented">
+Condensador: <span class="formula">10.02<i>nF</i>.</span>
+</div>
+<div class="Indented">
+Con estos datos podemos calcular la frecuencia de corte teórica del filtro. 
+</div>
+<div class="Indented">
+La frecuencia de corte sería:
+</div>
+<div class="Indented">
+ <div class="formula">
+<i>Fc</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i><i>RC</i></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+Sustituyendo los valores (R y C) de la resistencia y el condensador, obtenemos una frecuencia de corte teórica:
+</div>
+<div class="Indented">
+<span class="formula"><i>Fc</i> = 16.207’8845<i>Hz</i>.</span>
+</div>
+<div class="--Separator--">
+
+</div>
+<div class="Unindented">
+A continuación, montamos en el zócalo el circuito ya mencionado. La fuente será un generador de señal con forma de onda sinusoidal sin ’’offset’’ con amplitud pico a pico de 10V.
+</div>
+<div class="Indented">
+Medimos las amplitudes pico a pico de la entrada Vi(t)(Vipp) y de la señal de salida Vo(t)(Vopp) y la frecuencia de la señal de entrada. Los datos obtenidos son los que se muestran en el Cuadro 1. 
+</div>
+<div class="Indented">
+En teoría, la frecuencia de corte se calcula como <span class="formula"><i>Fc</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i><i>RC</i></span><span class="ignored">)</span></span></span>; que con los datos de la Resistencia y el Condensador mencionados anteriormente, tiene como resultado aproximado:
+</div>
+<div class="Indented">
+<span class="formula"><i>Fc</i> = 16207.88454640671<i>Hz</i>.</span>
+</div>
+<div class="Indented">
+Experimentalmente, podemos encontrar la frecuencia de corte buscando la frecuencia a la que se cumpla que Vo=0.7Vi. Según los datos recogidos este valor está entre 16000 y 16200, que es más o menos lo que calculamos de forma teórica.
+</div>
+<div class="Indented">
+El diagrama de Bode obtenido:
+</div>
+<div class="Indented">
+<img class="embedded" src="jpg.jpg" alt="figura jpg.jpg" style="width: 302px; max-width: 605px; height: 170px; max-height: 340px;"/>
+
+</div>
+<div class="Indented">
+Podemos aproximar la frecuencia de corte sobre el diagrama en torno a los 10.000Hz, lo que, teniendo en cuenta que se trata de una escala logaritmica, se puede aproximar a los 16.000 teóricos. 
+</div>
+<div class="Indented">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-l">
+[htbp]<span class="unknown">\caption</span><span class="environment"><span class="arrayrow">
+<span class="arraycell align-l">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-l">
+|r|r|r|l|r|r|r|<span class="unknown">\hline</span><span class="unknown">\multicolumn</span>1|l|Frec.(Hz)
+</span>
+<span class="arraycell align-l">
+amp;<span class="unknown">\multicolumn</span>1l|Vipp(V)
+</span>
+<span class="arraycell align-l">
+amp;<span class="unknown">\multicolumn</span>1l|Vopp(V)
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;<span class="unknown">\multicolumn</span>1l|Frec.(Hz)
+</span>
+<span class="arraycell align-l">
+amp;<span class="unknown">\multicolumn</span>1l|Vipp(V)
+</span>
+<span class="arraycell align-l">
+amp;<span class="unknown">\multicolumn</span>1l|Vopp(V)
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>100
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;18000
+</span>
+<span class="arraycell align-l">
+amp;11.6
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>200
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;19000
+</span>
+<span class="arraycell align-l">
+amp;11.3
+</span>
+<span class="arraycell align-l">
+amp;17.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>300
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;20000
+</span>
+<span class="arraycell align-l">
+amp;10.9
+</span>
+<span class="arraycell align-l">
+amp;17.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>400
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;30000
+</span>
+<span class="arraycell align-l">
+amp;8.4
+</span>
+<span class="arraycell align-l">
+amp;17.5
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>500
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;40000
+</span>
+<span class="arraycell align-l">
+amp;6.7
+</span>
+<span class="arraycell align-l">
+amp;17.3
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>600
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;50000
+</span>
+<span class="arraycell align-l">
+amp;5.5
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>700
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;60000
+</span>
+<span class="arraycell align-l">
+amp;4.7
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>800
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;70000
+</span>
+<span class="arraycell align-l">
+amp;3.9
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>900
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;80000
+</span>
+<span class="arraycell align-l">
+amp;3.6
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>1000
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;90000
+</span>
+<span class="arraycell align-l">
+amp;3.3
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>2000
+</span>
+<span class="arraycell align-l">
+amp;17.7
+</span>
+<span class="arraycell align-l">
+amp;18.3
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;100000
+</span>
+<span class="arraycell align-l">
+amp;2.75
+</span>
+<span class="arraycell align-l">
+amp;17.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>3000
+</span>
+<span class="arraycell align-l">
+amp;17.5
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;200000
+</span>
+<span class="arraycell align-l">
+amp;1.42
+</span>
+<span class="arraycell align-l">
+amp;16.9
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>4000
+</span>
+<span class="arraycell align-l">
+amp;17.5
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;300000
+</span>
+<span class="arraycell align-l">
+amp;0.95
+</span>
+<span class="arraycell align-l">
+amp;16.9
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>5000
+</span>
+<span class="arraycell align-l">
+amp;17.3
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;400000
+</span>
+<span class="arraycell align-l">
+amp;0.7
+</span>
+<span class="arraycell align-l">
+amp;16.9
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>6000
+</span>
+<span class="arraycell align-l">
+amp;16.6
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;500000
+</span>
+<span class="arraycell align-l">
+amp;0.569
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>7000
+</span>
+<span class="arraycell align-l">
+amp;16.3
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;600000
+</span>
+<span class="arraycell align-l">
+amp;0.481
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>8000
+</span>
+<span class="arraycell align-l">
+amp;15.6
+</span>
+<span class="arraycell align-l">
+amp;18
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;700000
+</span>
+<span class="arraycell align-l">
+amp;0.4
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>9000
+</span>
+<span class="arraycell align-l">
+amp;15.3
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;800000
+</span>
+<span class="arraycell align-l">
+amp;0.369
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>10000
+</span>
+<span class="arraycell align-l">
+amp;14.8
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;900000
+</span>
+<span class="arraycell align-l">
+amp;0.331
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>11000
+</span>
+<span class="arraycell align-l">
+amp;14.4
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;1000000
+</span>
+<span class="arraycell align-l">
+amp;0.291
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>12000
+</span>
+<span class="arraycell align-l">
+amp;13.9
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;2000000
+</span>
+<span class="arraycell align-l">
+amp;0.145
+</span>
+<span class="arraycell align-l">
+amp;16.7
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>13000
+</span>
+<span class="arraycell align-l">
+amp;13.6
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;3000000
+</span>
+<span class="arraycell align-l">
+amp;0.095
+</span>
+<span class="arraycell align-l">
+amp;15.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>14000
+</span>
+<span class="arraycell align-l">
+amp;13.1
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;4000000
+</span>
+<span class="arraycell align-l">
+amp;0.07
+</span>
+<span class="arraycell align-l">
+amp;14.5
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>15000
+</span>
+<span class="arraycell align-l">
+amp;12.8
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;5000000
+</span>
+<span class="arraycell align-l">
+amp;0.05
+</span>
+<span class="arraycell align-l">
+amp;13.3
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>16000
+</span>
+<span class="arraycell align-l">
+amp;12.3
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;6000000
+</span>
+<span class="arraycell align-l">
+amp;0.041
+</span>
+<span class="arraycell align-l">
+amp;12.5
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>16100
+</span>
+<span class="arraycell align-l">
+amp;12.3
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;7000000
+</span>
+<span class="arraycell align-l">
+amp;0.035
+</span>
+<span class="arraycell align-l">
+amp;11.6
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>16200
+</span>
+<span class="arraycell align-l">
+amp;12.3
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;8000000
+</span>
+<span class="arraycell align-l">
+amp;0.03
+</span>
+<span class="arraycell align-l">
+amp;10.6
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>16300
+</span>
+<span class="arraycell align-l">
+amp;12.2
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;9000000
+</span>
+<span class="arraycell align-l">
+amp;0.028
+</span>
+<span class="arraycell align-l">
+amp;9.8
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>17000
+</span>
+<span class="arraycell align-l">
+amp;11.9
+</span>
+<span class="arraycell align-l">
+amp;17.8
+</span>
+<span class="arraycell align-l">
+amp;
+</span>
+<span class="arraycell align-l">
+amp;10000000
+</span>
+<span class="arraycell align-l">
+amp;0.027
+</span>
+<span class="arraycell align-l">
+amp;9.2
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+<span class="arraycell align-l">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-l">
+<span class="unknown">\hline</span>
+</span>
+
+</span>
+</span>
+</span>
+
+</span>
+</span>
+</span>
+
+</span>
+</span> 
+</div>
+<div class="Indented">
+<p><br/>
+</p>
+
+</div>
+
+</div>
+</body>
+</html>

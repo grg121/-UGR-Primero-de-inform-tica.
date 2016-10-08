@@ -1,0 +1,3 @@
+La numeración de las prácticas en los guiones puede resultar un poco confusa. Esto se debe a la necesidad de coordinar las prácticas con los otros grupos de FFT. Por tanto el orden que se va a seguir es el indicado en el nombre del archivo pdf correspondiente. Por ejemplo, la práctica número 4 (práctica 4.pdf) viene indicada en el texto como práctica número 6. Será nuestra práctica número 4.
+
+Resumen: que mires el nombre del pdf.
